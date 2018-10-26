@@ -1,0 +1,19 @@
+{
+    "productType": "Accommodation",
+  "supplierName":"Supplier-1254",
+    "netPybleToSupplr": 1651,
+    "currencyCode":"INR",
+    "supplierPayment":
+    {
+      "typeOfSettlement":"Credit",
+      "paymentDueDate": "2018-01-01T00:00:00.000Z",
+      "amount": 6000,
+      "currencyCode":"INR",
+      "paymentDate":"2018-01-01T00:00:00.000Z",
+      "paymentAdviceId": 461,
+      "paymentRefNo": 7231,
+      "status":"PAID"
+    },
+    "totalAmountPaid":45621,
+    "balanceAmountDue": 556
+}

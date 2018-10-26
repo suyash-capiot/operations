@@ -1,0 +1,41 @@
+###*** Configuration file for Security Management ***###
+
+#*** BEGIN PROXY Configuration for use ***#
+#URL Should be empty and port as zero for DEV Env
+proxy_info:
+  url: 10.18.1.42
+  port: 8888
+#*** END PROXY Configuration for use ***#
+
+
+#*** Configuration file for user management APIs ***#
+user_management:
+  mdm:
+    user_token_validation_url: ${mdm.user-management}/user/validateToken?api=
+
+  ops_user_type:
+    OpsUser: ROLE_OPS_USER
+    OpsApprovalUser: ROLE_OPS_APPROVER_USER
+    OpsSupplierExtranet: ROLE_OPS_SUPPLIER_EXTRANET_USER
+    OpsMarketingUser: ROLE_OPS_MARKETING_USER
+    OpsProductUser: ROLE_OPS_PRODUCT_USER
+    OpsEmailMonitorUser: ROLE_OPS_EMAIL_MONITOR_USER
+
+  system_user:
+    username: sudhir.dubey@coxandkings.com
+    password: OpsApplication@123
+    login: ${mdm.user-management}/login?forceLogin=true
+    logout: ${mdm.user-management}/logout
+    auth_token_prefix: "Bearer "
+
+operation:
+  security:
+    tokenHeader: Authorization
+    secretKey: ThisCodeWasWrittenByTeamCAPIOT
+
+#*** Configuration file for user management APIs ***#
+
+#*** BEGIN ToDoTask module configurations ***#
+todo:
+  assign_user_roles: "OpsApprovalUser, AbstractProductFactory User"
+#*** END ToDoTask module configurations ***#

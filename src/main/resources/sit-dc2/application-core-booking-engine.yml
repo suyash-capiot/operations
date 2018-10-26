@@ -1,0 +1,10 @@
+#*** BEGIN - Search 2 Book Booking Engine core API ***#
+booking-engine-core-services:
+  base_url:  http://172.23.213.22:8080/booking_engine/
+#*** END - Search 2 Book Booking Engine core API ***#
+
+#*** BEGIN - URLs for Elastic Search ***#
+elastic-search:
+  base_url: http://172.23.213.34:5601
+  booking-engine: ${elastic-search.base_url}/logstash-bookingengine*/_search/
+#*** END - URLs for Elastic Search ***#

@@ -1,0 +1,8 @@
+{
+    "id": "1",
+    "functionId": "122",
+    "emailFrom": "12",
+    "emailToCC": "322",
+    "emailToBCC": "34",
+    "serverSettingId": "12123"
+}

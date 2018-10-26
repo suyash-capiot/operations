@@ -1,0 +1,42 @@
+{
+    "id": "1",
+    "clientMarketId": "1",
+    "pointOfSale": "India",
+    "domainUrl": "www.eezego1.com",
+    "configurationTypeEnumHandler": {
+        "id": "3",
+        "name": null,
+        "code": "STANDARD_DETAIL"
+    },
+    "templateId": null,
+    "colorScheme": null,
+    "headerDetail": null,
+    "footerDetail": null,
+    "logoId": null,
+    "language": [
+        {
+            "id": "3",
+            "languageId": "DR"
+        },
+        {
+            "id": "4",
+            "languageId": "RS"
+        }
+    ],
+    "selectedSupplierCurrency": [
+        {
+            "id": "3",
+            "currencyId": "RS"
+        },
+        {
+            "id": "4",
+            "currencyId": "DR"
+        }
+    ],
+    "emailConfigurations": null,
+    "templateLayoutStandardDetail": null,
+    "paymentInformationStandardDetail": null,
+    "generalInformationStandardDetail": null,
+    "clientLoginParameters": null,
+    "marketingSetupStandardDetails": null
+}

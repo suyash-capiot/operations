@@ -1,0 +1,5 @@
+{
+  "colorId":"1",
+  "cssElementId":"2",
+  "whiteLabelId":"1"
+}

@@ -1,0 +1,70 @@
+#*** BEGIN Configuration for Manage offline booking ***#
+offline-booking:
+  BE-apply-commercials: ${booking-engine-core-services.base_url}/AccoService/v1/applyCommercials
+  BE-apply-commercials-activities: ${booking-engine-core-services.base_url}/ActivityService/v1/applyCommercials
+  BE-create-booking: ${booking_engine_db_services.base_url}/DBService/dbUpdate
+  BE-apply-commercials-transfer: ${booking-engine-core-services.base_url}/TransfersService/v1/applyCommercials
+  BE-apply-commercials-cruise: ${booking-engine-core-services.base_url}/CruiseService/v1/applyCommercials
+  BE-apply-commercials-holidays: ${booking-engine-core-services.base_url}/HolidaysService/v1/applyCommercials
+  BE-retrieveairbookingno : ${booking-engine-core-services.base_url}/AirService/v1/retrievepnr
+#*** END Configuration for Manage offline booking ***#
+
+
+booking-engine-core-services:
+  acco:
+      search: ${booking-engine-core-services.base_url}/AccoService/v1/search
+      price: ${booking-engine-core-services.base_url}/AccoService/v1/price
+      reprice: ${booking-engine-core-services.base_url}/AccoService/v1/reprice
+      opsreprice: ${booking-engine-core-services.base_url}/OpsAccoService/v1/reprice
+      hoteldata: ${booking-engine-core-services.base_url}/OpsAccoService/v1/redisHotelData/
+      modify: ${booking-engine-core-services.base_url}/AccoService/v1/modify
+      book: ${booking-engine-core-services.base_url}/AccoService/v1/book
+      retrieve_pnr_status: ${booking-engine-core-services.base_url}/AccoService/v1/retrieve
+  air:
+      search: ${booking-engine-core-services.base_url}/AirService/v1/search
+      price: ${booking-engine-core-services.base_url}/AirService/v1/price
+      reprice: ${booking-engine-core-services.base_url}/AirService/v1/reprice
+      opsreprice: ${booking-engine-core-services.base_url}/OpsAirService/v1/reprice
+      cancel: ${booking-engine-core-services.base_url}/AirService/v1/cancel
+      getssr: ${booking-engine-core-services.base_url}/AirService/v1/getssr
+      book: ${booking-engine-core-services.base_url}/AirService/v1/book
+      issueTicket : ${booking-engine-core-services.base_url}/AirService/v1/issueTicket
+      retrieve_pnr_status: ${booking-engine-core-services.base_url}/AirService/v1/retrievepnr
+
+daily_roe:  ${booking-engine-core-services.base_url}getRoe/%s/%s/%s
+
+
+#*** BEGIN Configuration for Amend Commercials ***#
+
+
+ROE:
+  booking-date : ${booking-engine-core-services.base_url}/getRoe
+
+
+#*** END Configuration for Amend Commercials ***#
+
+
+#*** BEGIN - Manage product updates***#
+#hardcode because Be didnt deploy e-ticket generation code in SIT. Its available in dev. when they provide remove ip,port
+manage-product-updates:
+  eticket:
+    generate: http://10.24.2.248:8080/booking_engine/api/v1/eticket/pdf/
+    download: http://10.24.2.248:8080/booking_engine/api/v1/eticket/download/
+#*** END - Manage product updates***#
+
+#*** BEGIN - CHANGE SUPPLIER CONFIGURATION **#
+
+change-supplier:
+  acco:
+    applycommercials: ${booking-engine-core-services.base_url}AccoService/v1/applyCommercials
+    kafka-rq-url: ${booking-engine-core-services.base_url}AccoService/v1/getkafkaRQ
+
+#*** END - CHANGE SUPPLIER CONFIGURATION **#
+
+#*** BEGIN - Merge Bookings CONFIGURATION **#
+merge-bookings:
+  acco:
+    applycommercials: ${change-supplier.acco.applycommercials}
+    #applycommercials: http://10.29.17.117:8080/AccoService/v2/applyCommercials
+    
+#*** END - Merge Bookings CONFIGURATION **# 

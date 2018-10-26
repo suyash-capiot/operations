@@ -1,0 +1,14 @@
+[
+  {
+    "bookId": "123456",
+    "isAvailable": true
+  },
+  {
+    "bookId": "112233-TL",
+    "isAvailable": false
+  },
+  {
+    "bookId": "12345",
+    "isAvailable": false
+  }
+]

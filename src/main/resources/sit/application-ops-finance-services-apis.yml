@@ -1,0 +1,142 @@
+#*** Configurations for Finance API interactions ***#
+
+#*** BEGIN Account Overview in Booking Details section ***#
+account_overview:
+  get_booking_invoices: ${finance.base_url}invoiceByBookingRef?bookingRef=
+  get_invoice_receipts: ${finance.base_url}receipt?entityType=CLIENT&receiptType=ALL&invoiceNumber=
+  get_credit_debit_note_for_invoice: ${finance.base_url}getCreditDebitNote?linkedNoteType=INVOICE&number=
+#*** END Account Overview in Booking Details section ***#
+
+#*** BEGIN Refunds Module Finance specific APIs***#
+refund:
+  finance:
+    credit_debit_note:
+      get_credit_note: ${finance.base_url}creditDebitMemo/noteNumber/
+      get_credit_note_id: ${finance.base_url}creditDebitMemo/
+      create_credit_debit_note: ${finance.base_url}creditDebitMemo/
+    invoice:
+      get_invoice: ${finance.base_url}invoiceByBookingRefAndOrderID
+      update_invoice_only_for_cancellation:  ${finance.base_url}cancelBookingInvoice?oldBookingReferenceNumber
+    finance-refund:
+      save-refund-claim: ${finance.base_url}saveRefundClaim
+      get-claim-by-id: ${finance.base_url}refundClaimByClaimNumber/
+      updated_refund_claim: ${finance.base_url}refundClaims/
+      refund_by_booking_reference: ${finance.base_url}refundClaimNos/
+    my-account:
+      get-balance: ${finance.base_url}/accountBook/balance
+#*** END Refunds Module ***#
+
+#*** BEGIN Full Cancellation Module Finance specific APIs ***#
+full_cancellation:
+  get_invoice: ${finance.base_url}invoiceByBookingRefAndOrderID
+  update_invoice_only_for_cancellation: ${finance.base_url}cancelBookingInvoice?oldBookingReferenceNumber
+#*** END Full Cancellation Module ***#
+
+#*** BEGIN of Flight Discrepancy Module Finance specific APIs ***#
+flight_discrepancy:
+  get_source_airLines: ${finance.base_url}airrecon/filterForOperation?filterByName=
+  search: ${finance.base_url}airrecon/getdiscrepancy
+  update_status: ${finance.base_url}airrecon/changestatus
+  get: ${finance.base_url}airrecon/getdiscrepancy?discrepancyRecordId=
+  get_final_service_orders: ${finance.base_url}airrecon/getfso?paymentUniqueId=
+#*** End of Flight Discrepancy Module Finance specific APIs ***#
+
+#*** BEGIN Supplier Bill Passing Module Finance specific APIs ***#
+finance-general-invoice:
+  supplier-bill-passing: ${finance.base_url}generalInvoiceBillPassing/
+  paymentAdvice: ${finance.base_url}generalInvoiceSettStatus/
+
+#*** End Supplier Bill Passing Module Finance specific APIs ***#
+
+#*** Configurations for Finance API interactions ***#
+finance-commercial-statements-settelement:
+  base-url: ${finance.base_url}settlement
+  supplier_step_one: ${finance-commercial-statements-settelement.base-url}/supplier/stepOne/
+  supplier_step_two: ${finance-commercial-statements-settelement.base-url}/supplier/stepTwo
+  supplier_step_three: ${finance-commercial-statements-settelement.base-url}/supplier/stepThree
+  client_step_one: ${finance-commercial-statements-settelement.base-url}/client/stepOne/
+  client_step_two: ${finance-commercial-statements-settelement.base-url}/client/stepTwo
+  client_step_three: ${finance-commercial-statements-settelement.base-url}/client/stepThree
+  get_invoice: http://acc-module-service-cnkfinance.10.24.2.188.nip.io/ams/api/v1/getCommercialInvoiceByNumber?invoiceNumber=
+#*** Configurations for Finance API interactions ***#
+
+#*** BEGIN Amend Commercials Finance specific APIs ***#
+
+amend-commercials:
+  get:
+    invoice-by-booking-and-order: ${finance.base_url}invoiceByBookingRefAndOrderID
+  update:
+    invoice: ${finance.base_url}amendinvoices
+  create:
+    debit_note: ${finance.base_url}creditDebitMemo
+
+#*** END Amend Commercials Finance specific APIs ***#
+
+## BEGIN -- configurations for Amendment and partial cancellation
+amendmentAndPartialCancellation:
+  invoiceCheck: ${finance.base_url}receiptInvoice
+  invoiceUpdate: ${finance.base_url}amendinvoices
+  debitNote: ${finance.base_url}creditDebitMemo
+## END -- configurations for Amendment and partial cancellation
+
+
+#*** BEGIN for Manage Product Sharing configuration ***#
+product_sharing:
+  finance:
+    get_invoice: ${finance.base_url}invoiceByBookingRefAndOrderID
+    cancel_invoice: ${finance.base_url}cancelBookingInvoice?oldBookingReferenceNumber=
+    amend_invoice: ${finance.base_url}amendinvoices?invoiceNumber=
+    send_invoice: ${finance.base_url}email
+
+
+#*** END for Manage Product Sharing configuration ***#
+
+#*** BEGIN for Ops Booking ***#
+ops_booking:
+  finance:
+    get:
+      invoices-for-booking: ${finance.base_url}/invoice/api/v1/invoices?bookingRefNumber=
+
+#*** End of Ops Booking ***#
+
+#*** BEGIN for Service Order and Supplier Liability ***#
+final_service_order:
+  finance:
+    update_FSO_entries_on_creation: ${finance.base_url}serviceOrders/accountingEntriesOnFSOCreation
+    update_FSO_entries_on_cancellation: ${finance.base_url}serviceOrders/accountingEntriesOnFSOCancel
+
+#*** END for Service Order and Supplier Liability ***#
+
+#*** BEGIN of payment Advice  ***#
+
+payment_advice:
+    notify_for_accounting_entry:  ${finance.base_url}paymentAdvice/accountingEntriesOnPayment
+
+#*** End of payment Advice  ***#
+
+
+#*** BEGIN for Manage Holiday Invoice configuration ***#
+
+holiday_invoice:
+  finance:
+    generate_holiday_invoice: ${finance.base_url}generateHolidayInvoice
+    checkHolidayInvoice: ${finance.base_url}checkHolidayInvoice
+
+#*** End for Manage Holiday Invoice configuration ***#
+
+#*** BEGIN Finance API configuration for Manage Documentation ***#
+documentation:
+  finance:
+    url: ${finance.base_url}accountBook/
+    total_revenue: /totalRevenue?entityType=CLIENT&entityId=
+    total_gross_profit: /totalGrossProfit?entityType=CLIENT&entityId=
+  path_expression: "$.amount"
+#*** End Finance API configuration for Manage Documentation ***#
+
+#*** BEGIN for Manage Time Limit Booking configuration ***#
+timelimit:
+  finance:
+    url: ${finance.base_url}accountBook/
+    totalRevenue: /totalRevenue?entityType=CLIENT&entityId=
+    totalGrossProfit: /totalGrossProfit?entityType=CLIENT&entityId=
+#*** END for Manage Time Limit Booking configuration ***#

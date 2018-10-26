@@ -1,0 +1,281 @@
+#*** YML file to store all module specific communication configurations ***#
+
+#*** Start of Common communication ***#
+communication:
+  email:
+    api: ${email_service.host}/emails/sendEmailUsingTemplate
+    sendEmailUsingBodyAndDocuments: ${email_service.host}/emails/sendEmailUsingBodyAndDocuments
+    sendEmailUsingTemplateAndDocuments: ${email_service.host}/emails/sendEmailUsingTemplateAndDocuments
+    from_address: smtp.aws@coxandkings.com
+    process: Operations
+    emailwithbody: ${email_service.host}/emails/sendEmailWithBody
+
+  alert:
+    api: ${alert_service.host}:${alert_service.port}/alerts/v1/sendInlineMessageAlert
+#*** End of Common communication ***#
+
+#*** BEGIN for Manage Reconfirmation configuration ***#
+reconfirmation:
+  ops:
+    sendEmailWithTemplate: ${email_service.host}/emails/sendEmailUsingTemplate
+    fromEmailAddress: "smtp.aws@coxandkings.com"
+
+  coxandkings-callback-base-url: ${call_back.base_url}/
+
+  supplier:
+    communication:
+      accept:
+        url: "${reconfirmation.coxandkings-callback-base-url}/supplierResponse/operations/reconfirmation/supplierResponse/v1/accept?ID="
+      reject:
+        url: "${reconfirmation.coxandkings-callback-base-url}/supplierResponse/operations/reconfirmation/supplierResponse/v1/reject?ID="
+      subject: "Supplier Reconfirmation"
+      template:
+          business_process: "Operations"
+          function: "Manage Reconfirmations"
+          scenario: "MNG RECON - SEND SPLR RECON"
+    rejection:
+      subject: "Rejection Notification"
+
+  client :
+    communication:
+      accept:
+        url: "${reconfirmation.coxandkings-callback-base-url}/clientResponse/operations/reconfirmation/clientResponse/v1/accept?ID="
+      reject:
+        url: "${reconfirmation.coxandkings-callback-base-url}/clientResponse/operations/reconfirmation/clientResponse/v1/reject?ID="
+      subject: "Client Reconfirmation"
+      template:
+        business_process: "Operations"
+        function: "Manage Reconfirmations"
+        scenario: "MNG RECON - SEND CLNT RECON"
+#*** END for Manage Reconfirmation configuration ***#
+
+
+#*** BEGIN for Manage Product Sharing configuration ***#
+product_sharing:
+  coxandkings-callback-base-url: ${call_back.base_url}/
+  communication:
+    email_url: ${email_service.host}/emails/sendEmailUsingTemplate
+    accept:
+      url: ${product_sharing.coxandkings-callback-base-url}/clientResponse/operations/productSharing/clientResponse/v1/accept?ID=
+    reject:
+      url: ${product_sharing.coxandkings-callback-base-url}/clientResponse/operations/productSharing/clientResponse/v1/reject?ID=
+
+  template:
+    email_subject: Product sharing confirmation
+    business_process: "Operations"
+    function: "Manage Product Sharing"
+    scenario: "MNG PRDT SHRNG -SEND PAX INFO"
+#*** END for Manage Product Sharing configuration ***#
+
+#*** BEGIN for TimeLimit configuration ***#
+timelimit:
+  process: "Operations"
+  function: "Manage Time Limit Bookings"
+  revised_date:
+    scenario: "MNG TLM BKNG - REVISED TIME DTLS TO CUST"
+  reduced_date:
+    scenario: "MNG TLM BKNG - REDUCED TIME DTLS TO CUST"
+  unable_to_extend:
+    scenario: "MNG TLM BKNG - UNABLE TO EXTEND TL"
+  close_to_expiry:
+    scenario: "MNG TLM BKNG - CLOSE TO EXPIRY"
+#*** END for Timelimit configuration ***#
+
+#*** BEGIN for Change Supplier***#
+
+change_supplier_price:
+  ops:
+    sendEmailWithTemplate: ${email_service.host}/emails/sendEmailUsingTemplate
+    fromEmailAddress: "smtp.aws@coxandkings.com"
+  coxandkings-callback-base-url: ${call_back.base_url}/
+  client :
+    communication:
+      accept:
+        url: "${change_supplier_price.coxandkings-callback-base-url}/changeSupplierName/v1/client/accept?id="
+      reject:
+        url: "${change_supplier_price.coxandkings-callback-base-url}/changeSupplierName/v1/client/reject?id="
+
+#*** END for Change Supplier***#
+
+#*** BEGIN Email Ccnfiguration of Add Driver Details***#
+add_driver_details:
+  template_config:
+    function: Add Driver Details
+    client:
+      scenario: MNG ADD DRIVER DETAILS - EMAIL TO CLIENT
+      subject: "Driver Details Inside."
+    supplier:
+      scenario: MNG ADD DRIVER DETAILS - EMAIL TO SUPPLIER
+      subject: "Urgent: Driver details required!"
+  dynamic_variables:
+    client:
+      first_name: First Name
+      trip : Product Name
+      booking_id: Product Condition
+    supplier:
+      booking_ref_id: Booking_Ref_Id
+      product_code: Product Code
+      fromDestination: from_destination
+      toDestination: to destination
+  links:
+    url: ${operation.backend-url}
+    supplier:  ${add_driver_details.links.url}/operations/driver-details
+
+#*** END of Email Ccnfiguration of Add Driver Details  ***#
+
+## BEGIN -- configurations for Amendment and partial cancellation
+amendmentAndPartialCancellation:
+  approved: ${call_back.base_url}/amendments/supplierResponse/approved?id=
+  rejected: ${call_back.base_url}/amendments/supplierResponse/rejected?id=
+  template_config:
+    function: "Amend Supplier Commercials"
+    scenario: "MNG AMND SPLR COMCL - SEND SUPLR CHRGS"
+    subject: "Reg: Updation in supplier charges for booking #"
+## END -- configurations for Amendment and partial cancellation
+
+## BEGIN -- configurations for reinstate a booking
+reinstateBooking:
+  emails:
+    template_config:
+      function: "Manage Reinstate a Booking"
+      scenario: "MNG REINST BKNG - CHCK CHNGS MADE"
+      subject: "Reg: Status of amendment request #"
+## END -- configurations for reinstate a booking
+
+
+##BEGIN -- configuration for Manage Failure
+failures:
+  email:
+    from: "smtp.aws@coxandkings.com"
+    businessProcess: Operations
+    function: Manage Failure
+    scenario: MNG FAILURE SEND SUCSFL BKNG
+##END -- configuration for Manage Failure
+
+#*** BEGIN for Manage Product Update ***#
+updatesToProductMaster:
+  process: "Operations"
+  function: "Manage Product Updates"
+  newDetails:
+    scenario: "MNG PRDCT UPDT- SEND NEW FLIGHT DETAILS"
+    subject: "Flight Details Changed"
+  updatedMdmDetails:
+    scenario: "MNG PRDCT UPDT- SEND PRODUCT MASTER DETAILS"
+    subject: "Product Master Details Has Changed"
+  eticket:
+    scenario: "MNG PDT UPD-SEND ETICKET"
+    subject: "E-Ticket Generated Successfully"
+#***  END for Manage Product Update ***#
+
+#*** BEGIN for New Supplier First Booking ***#
+new-supplier-first-booking:
+  process: "Operations"
+  function: "New Supplier - First Booking"
+  checkDetails:
+    scenario: "MNG NW SPLR FRST BKNG - SEND BOOKING DETAILS"
+    subject: "Check Booking Details"
+#*** END for New Supplier First Booking ***#
+
+#*** Email Ccnfiguration of Supplement On Supplier Price***#
+supplement_on_supplier_price:
+  template_config:
+    function: "Supplement on Supplier Price"
+    scenario: "REQUEST TO ACCEPT INCREASED PRICE"
+    subject: "Changed Pricing Detail."
+  dynamic_variables:
+    booking_id: booking_id
+    original_price : original_price
+    increased_price: increased_price
+#*** END of Email Ccnfiguration of Supplement On Supplier Price* ***#
+
+#*** BEGIN Email Configuration for GDS ***#
+gds-queue-management:
+  template_config:
+    function: "GDS Queue Management"
+    scenario: "GDS PNR UPDATE"
+    subject: "Reg: GDS PNR Update"
+#*** END Email Configuration for GDS ***#
+
+#*** BEGIN Email Ccnfiguration of Pre Payment to Supplier  ***#
+pre_payment_to_supplier:
+  template_config:
+    function: Pre Payment to supplier
+    scenario: PREPAY TO SPLR - SEND TO SPLR
+    subject: Payment Details.
+  dynamic_variables:
+    first_name: First Name
+    product_name : Product Name
+#*** END of Email Ccnfiguration of Pre Payment to Supplier  ***#
+#*** END of Email Configuration of Add Driver Details  ***#
+
+
+#*** Email Configuration of Product Booked Through Other Service Provider***#
+product_booked_thr_other_service:
+  template_config:
+    function: "Add Product Information booked through other service providers"
+    prod_name: "Car"
+    supplier:
+      scenario: "MNG PRD FRM OTHR PRVDR - EMAIL TO SPPLR"
+      subject: "Alert: Update in Car booking."
+    client:
+      scenario: "MNG PRD FRM OTHR PRVDR - EMAIL TO CLNT"
+      subject: "Complete your Car purchase."
+  dynamic_variables:
+    supplier:
+      product_name: Product Name
+
+      product_code : Product Code
+      product_condition: Product Condition
+    client:
+      product_name: Product Name
+      first_name: First Name
+      product_code : Product Code
+  links:
+     url: ${operation.backend-url}
+     flight:  ${product_booked_thr_other_service.links.url}/operations/product-booked-through-other-service-provider-client/Flight
+     hotel: ${product_booked_thr_other_service.links.url}/operations/product-booked-through-other-service-provider-client/Hotel
+     rail: ${product_booked_thr_other_service.links.url}/operations/product-booked-through-other-service-provider-client/Rail
+     bus: ${product_booked_thr_other_service.links.url}/operations/product-booked-through-other-service-provider-client/Bus
+
+#*** END of Email Configuration of Product Booked Through Other Service Provider  ***#
+
+#*** BEGIN Email Configuration of Manage Documentation ***#
+documentation:
+  fromMail: "smtp.aws@coxandkings.com"
+  template_config:
+    function: "Manage Documentation"
+    process: "Operations"
+    scenario: "MNG DOC - RSND EDITED DOCS TO CUST"
+    subject: "Regarding Edited Handover Document"
+  dynamic_variables:
+    first_name: First Name
+    document_name: documentName
+    order_id : Order_Id
+    book_id: Booking_Ref_Id
+#*** END Email Configuration of Manage Documentation ***#
+
+
+
+#*** Email Configuration of Forex Indent to Supplier  ***#
+forex_indent_to_supplier:
+  template_config:
+    function: Forex-Indent
+    scenario: SUPPLIER FOREX INDENT REQUEST
+    subject: Forex Indent Details
+  dynamic_variables:
+    supplier_name: SupplierName
+    tabular_info : tabularInformation
+#*** END of Email Configuration of Forex Indent to Supplier  ***#
+
+#*** Email Configuration of Alternate Options Sent to Client/Customer  ***#
+alternate-options:
+  template_config:
+    function: "Alternate Options"
+    scenario: "ALTERNATE OPTIONS FOR CUSTOMER"
+    subject: "Update on Failed Booking"
+  dynamic_variables:
+    product_name: Product Name
+    first_name: First Name
+    destination_name : Tour_Destination
+    review_url : Review URL
+#*** Email Configuration of Alternate Options Sent to Client/Customer  ***#

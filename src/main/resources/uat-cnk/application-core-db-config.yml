@@ -1,0 +1,31 @@
+#*** Config file used for Database operations ***#
+
+operations_db_config:
+  url: jdbc:postgresql://10.25.6.46:5432/operationsuat
+  username: postgres
+  password: postgres
+  driverClassName: org.postgresql.Driver
+  c3p0:
+     min_size: 10
+     max_size: 20
+     idle_test_period: 600
+
+spring:
+  http:
+      multipart:
+       max-file-size: 3000KB
+       max-request-size: 5000KB
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+       default_schema: operations_schema
+       hbm2ddl.import_files: operations_master_data.sql
+       #dialect: com.coxandkings.travel.operations.model.companycommercial.CustomPostgreSqlDialect
+       dialect: com.coxandkings.travel.operations.model.manageofflinebooking.manualofflinebooking.JsonPostgreSQLDialect
+
+  jackson:
+    serialization-inclusion: non_null

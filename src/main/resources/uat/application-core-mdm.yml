@@ -1,0 +1,60 @@
+#*** Config file used for MDM Configurations ***#
+
+#*** Do NOT define application/module specific URLs here.  For that, use application-ops-mdm-apis.yml file ***#
+mdm:
+  base_url: http://172.23.217.32
+  alert: ${mdm.base_url}:10003/platform/v1/alert
+  job-monitoring: ${mdm.base_url}:10003/platform/v1/jobMonitoring
+  supplier-config: ${mdm.base_url}:10001/supplier-config/v1/
+  ancillary: ${mdm.base_url}:10002/ancillary/v1/
+  platform: ${mdm.base_url}:10003/platform/v1/
+  operation-master: ${mdm.base_url}:10004/operation-master/v1/
+  user: ${mdm.base_url}:10010/user/v1/
+  workflow: ${mdm.base_url}:10011/workflow/v1/
+  organization: ${mdm.base_url}:10012/organization/v1/
+  asset: ${mdm.base_url}:10013/asset/v1/
+  product-holiday: ${mdm.base_url}:10018/product-holiday/v1/
+  si-cruise-request-definition: ${mdm.base_url}:10019/si-cruise-request-definition/v1/
+  #product-accommodation: ${mdm.base_url}:10021/product-accommodation/v1/  //need to identify wether its working or not
+  product-accommodation: ${mdm.base_url}:10021/product/v1/Accommodation/
+  product-manage-port: ${mdm.base_url}:10022/product-manage-port/v1/
+  product-cruise: ${mdm.base_url}:10023/product-cruise/v1/
+  config-master: ${mdm.base_url}:10026/config-master/v1/
+  finance-master: ${mdm.base_url}:10027/finance-master/v1/
+  review-feedback: ${mdm.base_url}:10028/review-feedback/v1/
+  supplier-commercials: ${mdm.base_url}:10029/supplier-commercial/v1/
+  product-cruise-package-destination: ${mdm.base_url}:10030/product-cruise-package-destination/v1/
+  supplier-inventory: ${mdm.base_url}:10031/supplier-inventory/v1/
+  supplier-inventory-other-products: ${mdm.base_url}:10033/supplier-inventory-other-products/v1/
+  offer-master: ${mdm.base_url}:10035/offer-master/v1/
+  client-presales: ${mdm.base_url}:10046/client-presales/v1/
+  client: ${mdm.base_url}:10050/client/v1/
+  client-config: ${mdm.base_url}:10051/client-config/v1/
+  clientlogin: ${mdm.base_url}:10060/clientlogin/v1/
+  Product-Activity: ${mdm.base_url}:10065/AbstractProductFactory-Activity/v1/
+  supplier-rates: ${mdm.base_url}:10075/supplier-rate/v1/
+  supplier-rate-other-product: ${mdm.base_url}:10078/supplier-rate-other-product/v1/
+  config-dashboard: ${mdm.base_url}:10080/config-dashboard/v1/
+  product-air: ${mdm.base_url}:10090/product-air/v1/
+  workflow-dictionary: ${mdm.base_url}:10101/workflowDictionary/
+  user-management: ${mdm.base_url}:10010/usermgmt/v1
+  user-group: ${mdm.user-management}/group
+  product-category: ${mdm.ancillary}productCategory?filter=
+  product: ${mdm.ancillary}product?filter=
+  product-subCategory: ${mdm.base_url}:10002/ancillary/v2/getAncillaryForUI/productCategorySubType?filter=
+  feedback-review-configuration: ${mdm.base_url}:10004/operation-master/v1/feedback-review-configuration
+  company: ${mdm.base_url}:10012/organization/v1/company
+  market: ${mdm.base_url}:10012/organization/v1/market
+  product-details: ${mdm.base_url}:10021/product/v1/
+  get-supplier-roe: ${mdm.base_url}:10003/platform/v1/roe
+  get_commercial_info: ${mdm.base_url}:10029/supplier-commercial/v1/supplier-commercial?filter=
+  get_supplier_ids: ${mdm.base_url}:10001/supplier-config/v1/suppliers?select="_id"
+  getSlabTypes: ${mdm.base_url}:10002/ancillary/v2/getAncillaryForUI/slabType
+  clientCommercials: ${mdm.base_url}:10025/client-commercials/v1/
+  client-dashboard: ${mdm.base_url}:10080/client-dashboard/v1/
+
+
+  client_supplier_product_mapping: #to be removed
+    search: ${mdm.base_url}:10051/client-config/v1/enable-disable-product-supplier?filter=
+#*** END ***#
+#*** Do NOT define application/module specific URLs in this file.  For that, use application-ops-mdm-apis.yml file ***#

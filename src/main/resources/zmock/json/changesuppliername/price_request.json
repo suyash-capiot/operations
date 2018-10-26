@@ -1,0 +1,111 @@
+{
+  "requestHeader":{
+    "userID": "WEM",
+    "sessionID": "BE-Return-20180116-230487348245533",
+    "transactionID": "6554659",
+    "clientContext": {
+      "clientCurrency": "INR",
+      "clientID": "",
+      "clientLanguage": "English",
+      "clientMarket": "India",
+      "clientType": "B2C",
+      "clientNationality":"",
+      "pointOfSale": "http://www.ezeego1.in",
+      "clientIATANumber":"1234",
+      "clientCallbackAddress": ""
+    }
+  },
+  "requestBody": {
+    "tripType": "Return",
+    "pricedItinerary": [
+
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  },
+                  "extendedRPH": "G8~ 336~ ~~DEL~07/25/2018 14:15~BOM~07/25/2018 16:25~~",
+                  "availableCount": 4,
+                  "departureTerminal": "",
+                  "journeyDuration": 130,
+                  "destinationLocation": "BOM",
+                  "rph": "",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "DEL",
+                  "quoteID": "0~N~~G8~NO9RBINX~0009~~0~1~~X",
+                  "resBookDesigCode": "N",
+                  "arrivalDate": "2018-07-25T16:25:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-07-25T14:15:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "GOAIR"
+      },
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  },
+                  "extendedRPH": "6E~ 965~ ~~BOM~08/30/2018 07:50~DEL~08/30/2018 10:10~",
+                  "availableCount": 4,
+                  "departureTerminal": "",
+                  "journeyDuration": 140,
+                  "destinationLocation": "DEL",
+                  "rph": "",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "BOM",
+                  "quoteID": "0~R~~RCIP~1070~~2~X",
+                  "resBookDesigCode": "R",
+                  "arrivalDate": "2018-08-30T10:10:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-08-30T07:50:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "INDIGO"
+
+      }
+
+    ],
+    "paxInfo": [
+      {
+        "paxType": "ADT",
+        "quantity": 2
+      },
+      {
+        "paxType": "CHD",
+        "quantity": 2
+      }
+    ]
+
+  }
+}

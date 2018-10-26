@@ -1,0 +1,2 @@
+document_library:
+  upload: ${document_library.base_url}/documentLibrary/v1/create

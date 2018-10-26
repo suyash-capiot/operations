@@ -1,0 +1,8 @@
+{
+    "id": "1",
+    "enableUpSell": true,
+    "enableCrossSell": true,
+    "shoppingCartRequired": true,
+    "enableComboProducts": true,
+    "enableProductDisplaySorting": "false"
+}

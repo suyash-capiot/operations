@@ -1,0 +1,17 @@
+package com.coxandkings.travel.operations.service.managedocumentation;
+
+import com.coxandkings.travel.operations.enums.managedocumentation.DocumentStatus;
+import com.coxandkings.travel.operations.model.managedocumentation.Document;
+import com.coxandkings.travel.operations.resource.managedocumentation.BookingDocumentDetailsResource;
+import com.coxandkings.travel.operations.resource.managedocumentation.DocumentsResource;
+
+public interface UpdateDocumentDetails {
+    public BookingDocumentDetailsResource changeDocumentStatus(BookingDocumentDetailsResource documentDetailsResource);
+    public BookingDocumentDetailsResource setCopyToCustomer(BookingDocumentDetailsResource documentDetailsResource);
+    public BookingDocumentDetailsResource addCommentsToDocument(BookingDocumentDetailsResource documentDetailsResource, String remarks);
+    public BookingDocumentDetailsResource updateDocumentStatus(BookingDocumentDetailsResource documentDetailsResource, DocumentStatus documentStatus);
+    public BookingDocumentDetailsResource setCommIdForDocuments(BookingDocumentDetailsResource documentDetailsResource, DocumentsResource documentsResource);
+    public BookingDocumentDetailsResource revokeDocument(BookingDocumentDetailsResource documentDetailsResource);
+    public BookingDocumentDetailsResource copyPassportAndVisaDetails(BookingDocumentDetailsResource documentDetailsResource, Document document);
+    public BookingDocumentDetailsResource changeActiveStatusOfDocs(BookingDocumentDetailsResource documentDetailsResource);
+}

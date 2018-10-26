@@ -1,0 +1,46 @@
+{
+  "requestHeader": {
+    "userID": "WEM",
+    "sessionID": "BE-Return-20180116-230487348245533",
+    "transactionID": "6554659",
+    "clientContext": {
+      "clientCurrency": "INR",
+      "clientID": "",
+      "clientLanguage": "English",
+      "clientMarket": "India",
+      "clientType": "B2C",
+      "clientNationality":"",
+      "pointOfSale": "http://www.ezeego1.in",
+      "clientIATANumber":"1234",
+      "clientCallbackAddress": ""
+    }
+  },
+  "requestBody": {
+    "tripType": "Return",
+    "originDestinationInfo": [
+      {
+        "departureDate": "2018-07-25",
+        "originLocation": "DEL",
+        "destinationLocation": "BOM"
+      },
+      {
+        "departureDate": "2018-08-30",
+        "originLocation": "BOM",
+        "destinationLocation": "DEL"
+      }
+
+    ],
+    "paxInfo": [
+      {
+        "paxType": "ADT",
+        "quantity": 2
+      },
+      {
+        "paxType": "CHD",
+        "quantity": 2
+      }
+
+    ],
+    "cabinType": "Economy"
+  }
+}

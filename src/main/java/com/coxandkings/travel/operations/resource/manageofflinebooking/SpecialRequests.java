@@ -1,0 +1,58 @@
+package com.coxandkings.travel.operations.resource.manageofflinebooking;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "specialRequestInfo",
+    "mealRequestInfo"
+})
+public class SpecialRequests {
+
+    @JsonProperty("specialRequestInfo")
+    private List<SpecialRequestInfo> specialRequestInfo = null;
+    @JsonProperty("mealRequestInfo")
+    private List<Object> mealRequestInfo = null;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("specialRequestInfo")
+    public List<SpecialRequestInfo> getSpecialRequestInfo() {
+        return specialRequestInfo;
+    }
+
+    @JsonProperty("specialRequestInfo")
+    public void setSpecialRequestInfo(List<SpecialRequestInfo> specialRequestInfo) {
+        this.specialRequestInfo = specialRequestInfo;
+    }
+
+    @JsonProperty("mealRequestInfo")
+    public List<Object> getMealRequestInfo() {
+        return mealRequestInfo;
+    }
+
+    @JsonProperty("mealRequestInfo")
+    public void setMealRequestInfo(List<Object> mealRequestInfo) {
+        this.mealRequestInfo = mealRequestInfo;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+}

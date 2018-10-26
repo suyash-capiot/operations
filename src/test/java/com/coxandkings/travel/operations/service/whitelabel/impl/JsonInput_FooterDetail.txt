@@ -1,0 +1,6 @@
+{
+    "elementId": "2",
+    "controlTypeId": "32",
+    "content": "3",
+    "whiteLabelId":"1"
+}

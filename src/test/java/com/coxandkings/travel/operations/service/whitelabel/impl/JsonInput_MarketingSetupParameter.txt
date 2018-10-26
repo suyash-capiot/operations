@@ -1,0 +1,5 @@
+{
+	"marketingSetUpName":"1",
+	"filePath":"2",
+	"whiteLabelId":"1"
+}

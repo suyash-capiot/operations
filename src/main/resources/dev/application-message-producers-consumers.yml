@@ -1,0 +1,28 @@
+###*** YML file to define Producers and Consumers for Operations thro Kafka ***###
+
+#*** BEGIN Kafka Configuration ***#
+kafka:
+  consumer:
+    bootstrap: "10.24.2.76:9092"
+    BE_TOPIC: BookingEngineNotification
+    BE_MESSAGE_CONSUMER_GROUP: OperationsBookingNotificationsMessageConsumerGrouphjhk
+    MDM_PRODUCT_TOPIC: MDM.SIT.PRODUCT.PUB
+    MDM_SUPPLIER_TOPIC: MDM.SIT.SUPPLIER.PUB
+    MDM_SUPPLIER_MESSAGE_CONSUMER_GROUP: OperationsMDMSupplierMessageConsumerGroupjhj
+    MDM_PRODUCT_MESSAGE_CONSUMER_GROUP: OperationsMDMProductMessageConsumerGroupjhbkjhb
+  producer:
+      bootstrap: 10.24.2.76:9092
+      clientId: OperationsKafkaProducer
+      email:
+        topic: emailTopic
+        enabled: true
+      supplier-commercials:
+        topic: MDM.SIT.SUPPLIERCOMMERCIAL.PUB
+        enabled: true
+      client-commercials:
+        topic: MDM.SIT.CLIENTCOMMERCIAL.PUB
+        enabled: true
+      booking-notifications:
+        topic: bookingNotifications
+        enabled: true
+#*** END Kafka Configuration  ***#

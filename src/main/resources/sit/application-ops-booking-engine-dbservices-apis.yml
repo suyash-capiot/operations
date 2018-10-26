@@ -1,0 +1,160 @@
+booking_engine:
+  base_url: ${booking_engine_db_services.base_url}
+  searchBookings: ${booking_engine.base_url}/BookingService/searchBookings
+  getBookingsSlabwise: ${booking_engine.base_url}/BookingService/getBookingsBySearchSlabWise
+  assignStaff: ${booking_engine.base_url}/BookingService/update/staffID
+  failed-bookings: ${booking_engine.base_url}/BookingService/searchFailedBookings
+  check-duplicates: ${booking_engine.base_url}/BookingService/searchDuplicateBookings/
+  assign_vouchers: ${booking_engine.base_url}/BookingService/update/vouchers
+  auto_suggestion: ${booking_engine.base_url}/BookingService/autoSuggestions/
+  update:
+    bookings: ${booking_engine.base_url}/BookingService/updateBookingList
+    isReadFlag: ${booking_engine.base_url}/BookingService/update/isRead
+    air:
+      booking_status: ${booking_engine.base_url}/AirService/update/status
+      confirmation_details: ${booking_engine.base_url}/AirService/update/confirmationDetails
+      paxInfo: ${booking_engine.base_url}/AirService/update/paxDetails
+      details: ${booking_engine.base_url}/AirService/update/flightDetails
+      order-price: ${booking_engine.base_url}/AirService/update/prices
+      ssr: ${booking_engine.base_url}/AirService/update/specialRequests
+    acco:
+      booking_status: ${booking_engine.base_url}/AccoService/update/status
+      room_status: ${booking_engine.base_url}/AccoService/update/roomStatus
+      paxInfo: ${booking_engine.base_url}/AccoService/update/paxDetails
+      stayDates: ${booking_engine.base_url}/AccoService/update/stayDates
+      order-price: ${booking_engine.base_url}/AccoService/update/prices
+    expiry_date: ${booking_engine.base_url}/BookingService/updateExpiryDate
+    booking_status: ${booking_engine.base_url}/BookingService/update/status
+  get:
+    all: ${booking_engine.base_url}/BookingService/getAllBooking
+    booking: ${booking_engine.base_url}/BookingService/getBooking/
+    timelimit_expiry_cutoff: ${booking_engine.base_url}/BookingService/getTimeLimitExpiryCutOff?orderID=
+    other_product_details: ${booking_engine.base_url}/BookingService/getOtherProduct
+    product: ${booking_engine.base_url}/BookingService/getProductDetails
+    documents: ${booking_engine.base_url}/BookingService/getDocumentForOrder
+  add:
+    product_info: ${booking_engine.base_url}/BookingService/addProductInfo
+  lock:
+    acquire_lock: ${booking_engine.base_url}/BookingService/acquireLock
+    release_lock: ${booking_engine.base_url}/BookingService/releaseLock
+  change_passenger_name: ${booking_engine.base_url}/BookingService/changePassengerName
+
+#*** BEGIN BE DB Services for Holiday invoice Module ***#
+holiday_invoice:
+    roe_update: ${booking_engine_db_services.base_url}HolidaysService/update/ROE
+#*** END BE DB Services for Holiday invoice Module ***#
+
+#*** BEGIN BE DB Services for Full Cancellation Module ***#
+full_cancellation:
+  booking_engine_db_services:
+    cancellation_charge: ${booking_engine_db_services.base_url}BookingService/getCancellations/
+    acco_status: ${booking_engine_db_services.base_url}AccoService/update/status
+    air_status: ${booking_engine_db_services.base_url}AirService/update/status
+#*** END BE DB Services for Full Cancellation Module ***#
+
+#*** BEGIN BE DB Services for Document Library Module ***#
+document_library:
+  update_booking_docs: ${booking_engine_db_services.base_url}/BookingService/update/documents
+  get_booking_docs: ${booking_engine_db_services.base_url}/BookingService/getDocumentForBooking
+#*** END BE DB Services for Document Library Module ***#
+
+#*** BEGIN BE DB Services for Manage Reconfirmation module ***#
+reconfirmation:
+  update_acco_ref_number: "${booking_engine_db_services.base_url}/AccoService/update/accoRefNumber"
+  supplier:
+    be:
+      update_reconfirmation_date: "${booking_engine_db_services.base_url}/AccoService/update/suppReconfirmDate"
+      update_reconfirmation_status: "${booking_engine_db_services.base_url}/AccoService/update/suppReconfirmsStatus"
+  client :
+    be:
+      update_reconfirmation_date: "${booking_engine_db_services.base_url}/AccoService/update/clientReconfirmDate"
+      update_reconfirmation_status: "${booking_engine_db_services.base_url}/AccoService/update/clientReconfirmStatus"
+#*** END BE DB Services for Manage Reconfirmation module ***#
+
+#*** BEGIN BE DB Services for Manage product Sharing ***#
+product_sharing:
+  be:
+    shared_booking_url: ${booking_engine_db_services.base_url}/BookingService/searchProductSharingBookings
+    updateIsSharableURL: ${booking_engine_db_services.base_url}/AccoService/update/isSharable
+    acco_modify: ${booking-engine-core-services.base_url}/AccoService/v1/modify
+#*** END BE DB Services for Manage product Sharing ***#
+
+#*** BEGIN Account Summary ***#
+account_summary:
+  get_cancellation_charges: ${booking_engine_db_services.base_url}/BookingService/getCancellations/
+  get_amendment_charges: ${booking_engine_db_services.base_url}/BookingService/getAmendments/
+#*** END Account Summary ***#
+
+#*** BEGIN TimeLimitBooking ***#
+timelimit:
+  be:
+    update: ${booking_engine_db_services.base_url}/BookingService/update/expiryTimeLimit
+    orderAttribute: ${booking_engine_db_services.base_url}/BookingService/update/orderAttribute
+#*** END TimeLimitBooking ***#
+
+#*** BEGIN Manage Arrival List ***#
+manage-arrival-list:
+  search:
+    general-arrival-list: ${booking_engine_db_services.base_url}/BookingService/searchGeneralArrivalList
+    flight-arrival-list: ${booking_engine_db_services.base_url}/BookingService/searchArrivalListFlight
+    acco-arrival-list: ${booking_engine_db_services.base_url}/BookingService/searchArrivalListHotel
+#*** END Manage Arrival List ***#
+
+#*** BEGIN Manage_No_Show ***#
+manage_no_show:
+  update:
+    no-show: ${booking_engine_db_services.base_url}/BookingService/update/orderAttribute
+
+#*** END Manage_No_Show ***#
+
+#*** BEGIN for New Supplier First Booking***#
+new-supplier-first-booking:
+  be:
+    getAirOrders: ${booking_engine_db_services.base_url}/AirService/getAirOrders/?suppID=
+    getAccoOrders: ${booking_engine_db_services.base_url}/AccoService/getAccoOrders/?suppID=
+
+#*** END for New Supplier First Booking***#
+
+
+#*** BEGIN Service Order Ancillaries Info ***#
+service_order:
+  get_pax_info:
+    path_expression: "$.paxInfo[0:].ancillaryServices.ancillaryInfo[0:]"
+#*** END Service Order Ancillaries Info ***#
+
+## BEGIN -- configurations for Amendment and partial cancellation
+amendmentAndPartialCancellation:
+  bookingEngine:
+    compSuppChrgAmendUpdation: ${booking_engine_db_services.base_url}/BookingService/update/amclcharges
+    addNewRecordInAMCLTable: ${booking_engine_db_services.base_url}/DBService/amendDBUpdate
+## END -- configurations for Amendment and partial cancellation
+
+#*** BEGIN Qc Management Info ***#
+qc_management:
+  update:
+    qcstatus: ${booking_engine_db_services.base_url}/BookingService/update/QCStatus
+#*** END Qc Management Info ***#
+
+
+#*** BEGIN BE DB Service for Manage Documentation module ***#
+manage_documentation:
+  be:
+    booking_level: ${booking_engine.base_url}/BookingService
+    get_document_details: ${manage_documentation.be.booking_level}/getBookingDocuments/
+    update_document_details: ${manage_documentation.be.booking_level}/update/documentIDs
+    get_order_level_documents: ${manage_documentation.be.booking_level}/
+    update_order_level_documents: ${manage_documentation.be.booking_level}/update/orderDocumentIDs
+    air_service: ${booking_engine.base_url}/AirService
+    update_pax_level_documents: ${manage_documentation.be.air_service}/update/paxDocuments
+    accommodation_service: ${booking_engine.base_url}/AccoService
+    update_room_level_documents: ${manage_documentation.be.accommodation_service}/update/roomDocuments
+    acco_rooms_info: "$.orderDetails.hotelDetails.rooms[0:]"
+    acco_rooms_pax_info: "$.orderDetails.hotelDetails.rooms[0:].paxInfo[0:]"
+    air_pax_info: "$.orderDetails.flightDetails.paxInfo[0:]"
+#*** END BE DB Service for Manage Documentation module ***#
+
+#*** BEGIN - UPDATE OF ACCO SUPPLIER DETAILS ***#
+acco_update:
+  update_supplier_ref: ${booking_engine_db_services.base_url}/AccoService/update/supplierReferenceId
+  update_acco_ref: ${booking_engine_db_services.base_url}/AccoService/update/accoRefNumber
+#*** END - UPDATE OF ACCO SUPPLIER DETAILS ***#

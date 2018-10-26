@@ -1,0 +1,6 @@
+qc_management:
+  brms:
+    air-supplier-commercial-url: ${brms.base_url}/air-cce-supplier-transactional
+    acco-supplierCommercial-url: ${brms.base_url}/acco-cce-supplier-transactional
+    air-client-commercial-url: ${brms.base_url}/air-cce-client-transactional
+    acco-client-commercial-url: ${brms.base_url}/acco-cce-client-transactional

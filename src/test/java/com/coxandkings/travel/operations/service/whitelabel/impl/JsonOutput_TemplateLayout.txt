@@ -1,0 +1,6 @@
+{
+    "id": "1",
+    "templateLayoutId": "1",
+    "templateTypeId": "2",
+    "customTextBoxInfo": "3"
+}

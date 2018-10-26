@@ -1,0 +1,6 @@
+org:
+  quartz:
+      threadCount: 5
+      threadClass: org.quartz.simpl.SimpleThreadPool
+      jobStoreClass: org.quartz.impl.jdbcjobstore.JobStoreTX
+      jobStoreDriverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate

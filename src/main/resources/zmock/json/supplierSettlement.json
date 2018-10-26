@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+            "_id": "SUPSETTLE23",
+            "settlementTermId": "87",
+            "supplierId": "SUPP74",
+            "supplierName": "Digvijay Test1",
+            "deleted": false,
+            "lastUpdated": "2018-01-23T09:56:09.889Z",
+            "createdAt": "2018-01-23T09:49:18.438Z",
+            "supplierBankDetails": [
+                {
+                    "supplierBankName": "dfh",
+                    "supplierBankAccNumber": "dfh",
+                    "supplierCurrency": "AED",
+                    "supplierBankAddress": "dfhdfh",
+                    "supplierBankSWIFTorIFCCode": "dfhdf",
+                    "intermediaryBankSWIFTorIFCCode": "dfh",
+                    "_id": "5a67051eb2bdaade1bb5a75c"
+                },
+                {
+                    "supplierBankName": "sdds",
+                    "supplierBankAccNumber": "d32",
+                    "supplierCurrency": "ALL",
+                    "supplierBankAddress": "dd",
+                    "supplierBankSWIFTorIFCCode": "343",
+                    "intermediaryBankSWIFTorIFCCode": "343"
+                }
+            ],
+            "nonCommissionableCommercials": {
+                "commercialHeads": []
+            },
+            "commissionableCommercials": {
+                "commercialHeads": []
+            },
+            "receivableCommercials": {
+                "commercialHeads": []
+            },
+            "payableCommercials": {
+                "commercialHeads": [
+                    {
+                        "commercialHead": "Content Access Fee",
+                        "settlementSchedule": "Before Travel Date",
+                        "supplierPreferredPaymentType": "Pre-Payment",
+                        "typeOfSettalment": "No Credit- Part Payment",
+                        "lastUpdated": "2018-01-23T09:49:11.889Z",
+                        "_id": "5a67051eb2bdaade1bb5a75d",
+                        "delayedPayments": {
+                            "isInterestLevied": false
+                        },
+                        "periodicity": {
+                            "repeatFreq": "End Of Validity",
+                            "endOfValidity": {
+                                "numberOfDays": 8
+                            },
+                            "halfYearly": [],
+                            "quarterly": [],
+                            "weekly": {
+                                "dates": []
+                            },
+                            "fortnightly": []
+                        }
+                    }
+                ]
+            },
+            "__v": 0
+        }
+    ]
+}

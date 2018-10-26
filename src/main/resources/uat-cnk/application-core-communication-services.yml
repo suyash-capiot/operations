@@ -1,0 +1,61 @@
+###*** YML file to config Email Server Settings ***###
+email:
+  run-outbound: true
+  run-inbound: false
+  smtp:
+    host: webmail.coxandkings.com
+    port: 587
+    username: smtp.capiot
+    password: Sc#4!2PD
+  inbound:
+    host: webmail.coxandkings.com
+    port: 110
+    protocol : pop3
+    folder : Inbox
+    scheduler-config : 0 0/3 * 1/1 * ? *
+    client-inbox: ops-inbound-client-dev
+    client-password: PSN^5$e3
+    customer-inbox: ops-inbound-customer-dev
+    customer-password: PSN^5$e4
+    supplier-inbox:  ops-inbound-supplier-dev
+    supplier-password: PSN^5$e5
+  temp-folder: "/tmp"
+  mdm:
+    b2c-client: ${mdm.client}/corpTraveller
+    b2b-client: ${mdm.client}/clientB2B
+    b2e-user: ${mdm.user-management}/user
+
+sms:
+  authId: MAMDI3YTK2MDEYMJVKOW
+  authToken: YzQxOTVjNzg2OGZjZGVkNzhjYzY4NjZkNjVhMzY5
+  send: http://bulkpush.mytoday.com//BulkSms/SingleMsgApi
+###*** END config of Email Server Settings ***###
+
+#*** BEGIN EMAIL & ALERT API Service ***#
+email_service:
+  host: ${operation.backend-url}
+  port: 8080
+
+#** BEGIN Call Back URL for email accept and reject request ***#
+call_back:
+  host: ${operation.backend-url}
+  port: ${server.port}
+  base_url: ${call_back.host}
+#** END Call Back URL for email accept and reject request ***#
+
+alert_service:
+  host: ${operation.backend-url}
+  port: 8080
+#*** END EMAIL & ALERT API Service ***#
+
+communication:
+  email:
+    api: ${operation.backend-url}/emails/sendEmailUsingTemplate
+    from_address: smtp.aws@coxandkings.com
+    process: Operations
+    emailwithbody: ${email_service.host}/emails/sendEmailWithBody
+    sendEmailUsingTemplate: ${email_service.host}/emails/sendEmailUsingTemplate
+    sendEmailUsingBodyAndDocuments: ${email_service.host}/emails/sendEmailUsingBodyAndDocuments
+
+  alert:
+    api: ${alert_service.host}/alerts/v1/sendInlineMessageAlert

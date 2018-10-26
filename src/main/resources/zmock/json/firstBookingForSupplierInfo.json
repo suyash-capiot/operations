@@ -1,0 +1,12 @@
+[
+  {
+    "bookId": "123456",
+    "orderId": "8a988278624755720162475b12160000",
+    "isFirstBooking": true
+  },
+  {
+    "bookId": "1234567",
+    "orderId": "8a988278624755720162475ff932000a",
+    "isFirstBooking": false
+  }
+]

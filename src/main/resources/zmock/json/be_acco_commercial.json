@@ -1,0 +1,178 @@
+{
+  "accoSupplierCommercial":{
+    "room": {
+      "roomLevelActions": {},
+      "roomSuppPriceInfo": {
+        "roomSupplierPrice": "424.88",
+        "taxes": {
+          "currencyCode": "USD",
+          "amount": 0,
+          "tax": [
+            {
+              "amount": 0,
+              "taxCode": "roomTax",
+              "currencyCode": "USD"
+            },
+            {
+              "amount": 0,
+              "taxCode": "salesTax",
+              "currencyCode": "USD"
+            },
+            {
+              "amount": 0,
+              "taxCode": "otherCharges",
+              "currencyCode": "USD"
+            }
+          ]
+        },
+        "currencyCode": "USD"
+      },
+      "mealInfo": {
+        "mealID": "",
+        "mealName": ""
+      },
+      "checkIn": "2018-04-10",
+      "roomTotalPriceInfo": {
+        "taxes": {
+          "currencyCode": "USD",
+          "amount": 0,
+          "tax": [
+            {
+              "amount": 0,
+              "taxCode": "roomTax",
+              "currencyCode": "USD"
+            },
+            {
+              "amount": 0,
+              "taxCode": "salesTax",
+              "currencyCode": "USD"
+            },
+            {
+              "amount": 0,
+              "taxCode": "otherCharges",
+              "currencyCode": "USD"
+            }
+          ]
+        },
+        "roomTotalPrice": "467.368",
+        "currencyCode": "USD"
+      },
+      "roomTypeInfo": {
+        "roomTypeCode": "72",
+        "roomCategoryID": "484",
+        "roomRef": "38880",
+        "roomTypeName": "Single",
+        "roomCategoryName": "King Suite"
+      },
+      "ratePlanInfo": {
+        "ratePlanname": "1",
+        "ratePlanRef": "",
+        "ratePlanCode": "1",
+        "bookingRef": ""
+      },
+      "paxInfo": [
+        {
+          "firstName": "ron",
+          "lastName": "doe",
+          "paxType": "ADT",
+          "paxID": "8a988278626a3b2501626cd140de00c1",
+          "middleName": "mathew",
+          "addressDetails": {
+            "zipCode": "400063",
+            "cityName": "Mumbai",
+            "countryName": "India",
+            "addressLines": [
+              "addrLine1",
+              "addrLine2"
+            ],
+            "state": "Maharashtra"
+          },
+          "title": "Mr",
+          "birthDate": "1990-01-01"
+        }
+      ],
+      "roomSuppCommercials": [
+        {
+          "commercialCalculationAmount": 0,
+          "commercialFareComponent": "Basic",
+          "commercialCalculationPercentage": 5,
+          "commercialInitialAmount": 424.88,
+          "commercialTotalAmount": 403.63599999999997,
+          "commercialType": "Receivable",
+          "commercialAmount": 21.244,
+          "commercialName": "Standard"
+        }
+      ],
+      "roomClientCommercials": [
+        {
+          "clientID": null,
+          "parentClientID": null,
+          "clientCommercials": [],
+          "commercialEntityType": null,
+          "commercialEntityID": null
+        }
+      ],
+      "checkOut": "2018-04-12",
+      "roomID": "8a988278626a3b2501626cd140de00c0",
+      "refundableIndicator": false
+    },
+    "opsAccoOrderSupplierPriceInfo": {
+      "taxes": {
+        "currencyCode": "USD",
+        "amount": 0,
+        "tax": [
+          {
+            "amount": 0,
+            "taxCode": "otherCharges",
+            "currencyCode": "USD"
+          },
+          {
+            "amount": 0,
+            "taxCode": "salesTax",
+            "currencyCode": "USD"
+          },
+          {
+            "amount": 0,
+            "taxCode": "roomTax",
+            "currencyCode": "USD"
+          }
+        ]
+      },
+      "supplierPrice": "876.08",
+      "currencyCode": "USD"
+    },
+    "opsAccommodationTotalPriceInfo": {
+      "totalPrice": "963.688",
+      "taxes": {
+        "currencyCode": "USD",
+        "amount": 0,
+        "tax": [
+          {
+            "amount": 0,
+            "taxCode": "otherCharges",
+            "currencyCode": "USD"
+          },
+          {
+            "amount": 0,
+            "taxCode": "salesTax",
+            "currencyCode": "USD"
+          },
+          {
+            "amount": 0,
+            "taxCode": "roomTax",
+            "currencyCode": "USD"
+          }
+        ]
+      },
+      "currencyCode": "USD"
+    },
+    "opsOrderSupplierCommercials": [
+      {
+        "commercialCurrency": "",
+        "commercialType": "Receivable",
+        "commercialAmount": "43.804",
+        "commercialName": "Standard"
+      }
+    ]
+  }
+}

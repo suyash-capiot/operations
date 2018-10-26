@@ -1,0 +1,9 @@
+#*** URL for Booking Engine DB Services ***#
+
+#Note: This is NOT SEARCH TO BOOK APIs
+# This URL is for Booking Engine/Order Database APIs used by Ops/Finance
+
+booking_engine_db_services:
+  base_url: http://172.23.213.22:8080/BookingEngineDBSource/
+
+#*** END URL for Booking Engine DB Services ***#

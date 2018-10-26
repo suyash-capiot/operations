@@ -1,0 +1,207 @@
+{
+  "requestHeader": {
+    "userID": "WEM",
+    "sessionID": "BE-Return-20180116-230487348245539",
+    "transactionID": "6554659",
+    "clientContext": {
+      "clientCurrency": "INR",
+      "clientID": "",
+      "clientLanguage": "English",
+      "clientMarket": "India",
+      "clientType": "B2C",
+      "clientNationality":"",
+      "pointOfSale": "http://www.ezeego1.in",
+      "clientIATANumber":"1234",
+      "clientCallbackAddress": ""
+    }
+  },
+  "requestBody": {
+    "tripType": "Return",
+    "pricedItinerary": [
+
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  },
+                  "extendedRPH": "G8~ 336~ ~~DEL~07/25/2018 14:15~BOM~07/25/2018 16:25~~",
+                  "availableCount": 4,
+                  "departureTerminal": "",
+                  "journeyDuration": 130,
+                  "destinationLocation": "BOM",
+                  "rph": "",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "DEL",
+                  "quoteID": "0~N~~G8~NO9RBINX~0009~~0~1~~X",
+                  "resBookDesigCode": "N",
+                  "arrivalDate": "2018-07-25T16:25:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-07-25T14:15:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "GOAIR"
+
+      },
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  },
+                  "extendedRPH": "6E~ 965~ ~~BOM~08/30/2018 07:50~DEL~08/30/2018 10:10~",
+                  "availableCount": 4,
+                  "departureTerminal": "",
+                  "journeyDuration": 140,
+                  "destinationLocation": "DEL",
+                  "rph": "",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "BOM",
+                  "quoteID": "0~R~~RCIP~1070~~2~X",
+                  "resBookDesigCode": "R",
+                  "arrivalDate": "2018-08-30T10:10:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-08-30T07:50:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "INDIGO"
+
+      }
+
+    ],
+
+    "paxInfo": [
+      {
+        "paxType": "ADT",
+        "quantity": 2
+      },
+      {
+        "paxType": "CHD",
+        "quantity": 2
+      }
+    ],
+    "paxDetails": [
+      {
+        "title": "MR",
+        "firstName": "PIYUSH",
+        "middleName": "JAYESH",
+        "surname": "NAIK",
+        "gender": "Male",
+        "dob": "1977-01-01",
+        "paxType": "ADT",
+        "contactDetails": [
+          {
+            "contactInfo": {
+              "areaCityCode": "22",
+              "countryCode": "91",
+              "mobileNo": "8888888888",
+              "email": "abc@abc.com",
+              "contactType": "WORK/HOME"
+            }
+          }
+        ],
+        "addressDetails": {
+          "addrLine1": "addrLine1",
+          "addrLine2": "addrLine2",
+          "city": "Mumbai",
+          "state": "MH",
+          "zip": "400069",
+          "country": "IN"
+        },
+        "documentDetails": {
+          "documentInfo": [
+            {
+              "docNumber": "AEEE11111",
+              "docType": "PAN Card",
+              "nationality": "Indian",
+              "effectiveDate": "2010-12-12",
+              "expiryDate": "2020-12-12",
+              "issueAuthority": "Govt. of India",
+              "issueLocation": "Mumbai",
+              "issueCountry": "India"
+            },
+            {
+              "docNumber": "AEEE11112",
+              "docType": "Aadhar Card",
+              "nationality": "Indian",
+              "effectiveDate": "2010-12-12",
+              "expiryDate": "2020-12-12",
+              "issueAuthority": "Govt. of India",
+              "issueLocation": "Mumbai",
+              "issueCountry": "India"
+            }
+          ]
+        },
+        "specialRequests": {
+          "specialRequestInfo": [
+            {
+              "date": "2018-07-25T00:00:00",
+              "flightRefNumberRphList": "",
+              "amount": "8000.000",
+              "serviceQuantity": "0",
+              "destinationLocation": "BOM",
+              "type": "",
+              "originLocation": "DEL",
+              "ssrCode": "XC30",
+              "flightNumber": " 336",
+              "number": "0",
+              "servicePrice": {
+                "basePrice": "8000.000"
+              },
+              "currencyCode": "INR",
+              "status": "NN"
+            }
+
+          ]
+        },
+        "ancillaryServices": {
+          "ancillaryInfo": [
+            {
+              "type": "baggage",
+              "description": "",
+              "unit": "kg",
+              "quantity": "2",
+              "amount": "500"
+            },
+            {
+              "type": "meal",
+              "description": "breakfast",
+              "unit": "",
+              "quantity": "",
+              "amount": "500"
+            }
+          ]
+        }
+      }
+
+    ]
+  }
+}

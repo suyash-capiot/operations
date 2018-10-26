@@ -1,0 +1,4 @@
+{
+    "templateId": "1",
+    "whiteLabelId": "1"
+}

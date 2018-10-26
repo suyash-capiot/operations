@@ -1,0 +1,573 @@
+{
+  "airSupplierCommercial": {
+    "paxInfoList": [
+      {
+        "leadPax": false,
+        "isLeadPax": false,
+        "firstName": "Piyusha",
+        "lastName": "Naik",
+        "paxType": "ADT",
+        "specialRequests": {
+          "specialRequestInfo": [
+            {
+              "code": "WC",
+              "name": "Wheel Chair"
+            },
+            {
+              "code": "NS",
+              "name": "No Smoking Seat"
+            },
+            {
+              "code": "VM",
+              "name": "Veg Meal"
+            }
+          ]
+        },
+        "middleName": "Piyush",
+        "ancillaryServices": {
+          "ancillaryInfo": [
+            {
+              "unit": "kg",
+              "amount": "500",
+              "quantity": "2",
+              "description": "",
+              "type": "baggage"
+            },
+            {
+              "unit": "",
+              "amount": "500",
+              "quantity": "",
+              "description": "breakfast",
+              "type": "meal"
+            }
+          ]
+        },
+        "title": "Mrs.",
+        "birthDate": "1980-01-01",
+        "contactDetails": [
+          {
+            "contactInfo": {
+              "areaCityCode": "22",
+              "countryCode": "91",
+              "contactType": "WORK/HOME",
+              "mobileNo": "8888888888",
+              "email": "abc@abc.com"
+            }
+          }
+        ],
+        "status": "OnRequest"
+      },
+      {
+        "leadPax": true,
+        "isLeadPax": true,
+        "firstName": "Piyush",
+        "lastName": "Naik",
+        "paxType": "ADT",
+        "specialRequests": {
+          "specialRequestInfo": [
+            {
+              "code": "WC",
+              "name": "Wheel Chair"
+            },
+            {
+              "code": "NS",
+              "name": "No Smoking Seat"
+            },
+            {
+              "code": "VM",
+              "name": "Veg Meal"
+            }
+          ]
+        },
+        "middleName": "Jayesh",
+        "ancillaryServices": {
+          "ancillaryInfo": [
+            {
+              "unit": "kg",
+              "amount": "500",
+              "quantity": "2",
+              "description": "",
+              "type": "baggage"
+            },
+            {
+              "unit": "",
+              "amount": "500",
+              "quantity": "",
+              "description": "breakfast",
+              "type": "meal"
+            }
+          ]
+        },
+        "title": "Mr.",
+        "birthDate": "1977-01-01",
+        "contactDetails": [
+          {
+            "contactInfo": {
+              "areaCityCode": "22",
+              "countryCode": "91",
+              "contactType": "WORK/HOME",
+              "mobileNo": "8888888888",
+              "email": "abc@abc.com"
+            }
+          }
+        ],
+        "status": "OnRequest"
+      },
+      {
+        "leadPax": false,
+        "isLeadPax": false,
+        "firstName": "Pintoo",
+        "lastName": "Naik",
+        "paxType": "CHD",
+        "specialRequests": {
+          "specialRequestInfo": [
+            {
+              "code": "WC",
+              "name": "Wheel Chair"
+            },
+            {
+              "code": "NS",
+              "name": "No Smoking Seat"
+            },
+            {
+              "code": "VM",
+              "name": "Veg Meal"
+            }
+          ]
+        },
+        "middleName": "Piyush",
+        "ancillaryServices": {
+          "ancillaryInfo": [
+            {
+              "unit": "kg",
+              "amount": "500",
+              "quantity": "2",
+              "description": "",
+              "type": "baggage"
+            },
+            {
+              "unit": "",
+              "amount": "500",
+              "quantity": "",
+              "description": "breakfast",
+              "type": "meal"
+            }
+          ]
+        },
+        "title": "Master",
+        "birthDate": "2010-10-18",
+        "contactDetails": [
+          {
+            "contactInfo": {
+              "areaCityCode": "22",
+              "countryCode": "91",
+              "contactType": "WORK/HOME",
+              "mobileNo": "8888888888",
+              "email": "abc@abc.com"
+            }
+          }
+        ],
+        "status": "OnRequest"
+      }
+    ],
+    "opsFlightTotalPriceInfo": {
+      "baseFare": {
+        "currencyCode": "USD",
+        "amount": 1591.2
+      },
+      "fees": {
+        "currencyCode": "USD",
+        "fee": [
+          {
+            "currencyCode": "USD",
+            "amount": 900,
+            "feeCode": "FS"
+          },
+          {
+            "currencyCode": "USD",
+            "amount": 2983,
+            "feeCode": "YQ"
+          },
+          {
+            "currencyCode": "USD",
+            "amount": 150,
+            "feeCode": "PHF"
+          },
+          {
+            "currencyCode": "USD",
+            "amount": 150,
+            "feeCode": "RCF"
+          },
+          {
+            "currencyCode": "USD",
+            "amount": 450,
+            "feeCode": "PSF"
+          },
+          {
+            "currencyCode": "USD",
+            "amount": 1692,
+            "feeCode": "UDF"
+          }
+        ],
+        "amount": 6325.5
+      },
+      "totalPrice": "8710.05",
+      "receivables": {
+        "currencyCode": "USD",
+        "amount": 553.35,
+        "receivable": [
+          {
+            "currencyCode": "USD",
+            "amount": 553.35,
+            "Code": "ServiceCharge"
+          }
+        ]
+      },
+      "taxes": {
+        "currencyCode": "USD",
+        "amount": 240,
+        "tax": [
+          {
+            "amount": 120,
+            "taxCode": "CGST07",
+            "currencyCode": "USD"
+          },
+          {
+            "amount": 120,
+            "taxCode": "SGST07",
+            "currencyCode": "USD"
+          }
+        ]
+      },
+      "currencyCode": "USD",
+      "paxTypeFares": [
+        {
+          "totalFare": {
+            "currencyCode": "USD",
+            "amount": 2903
+          },
+          "paxType": "ADT",
+          "taxes": {
+            "currencyCode": "USD",
+            "tax": [
+              {
+                "amount": 40,
+                "taxCode": "CGST07",
+                "currencyCode": "USD"
+              },
+              {
+                "amount": 40,
+                "taxCode": "SGST07",
+                "currencyCode": "USD"
+              }
+            ]
+          },
+          "baseFare": {
+            "currencyCode": "USD",
+            "amount": 530.4
+          },
+          "fees": {
+            "currencyCode": "USD",
+            "fee": [
+              {
+                "currencyCode": "USD",
+                "amount": 300,
+                "feeCode": "FS"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 994,
+                "feeCode": "YQ"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 50,
+                "feeCode": "PHF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 50,
+                "feeCode": "RCF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 150,
+                "feeCode": "PSF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 564,
+                "feeCode": "UDF"
+              }
+            ]
+          },
+          "clientEntityCommercial": [
+            {
+              "clientID": "",
+              "parentClientID": "",
+              "clientCommercials": [
+                {
+                  "commercialCurrency": "INR",
+                  "commercialType": "Receivable",
+                  "commercialAmount": 29.9,
+                  "commercialName": "MarkUp",
+                  "companyFlag": true
+                },
+                {
+                  "commercialCurrency": "INR",
+                  "commercialType": "Receivable",
+                  "commercialAmount": 184.45,
+                  "commercialName": "ServiceCharge",
+                  "companyFlag": true
+                }
+              ],
+              "commercialEntityType": "ClientType",
+              "commercialEntityID": "BookEngClientTypeB2CIndiaEng"
+            }
+          ]
+        },
+        {
+          "totalFare": {
+            "currencyCode": "USD",
+            "amount": 2903
+          },
+          "paxType": "CHD",
+          "taxes": {
+            "currencyCode": "USD",
+            "tax": [
+              {
+                "amount": 40,
+                "taxCode": "CGST07",
+                "currencyCode": "USD"
+              },
+              {
+                "amount": 40,
+                "taxCode": "SGST07",
+                "currencyCode": "USD"
+              }
+            ]
+          },
+          "baseFare": {
+            "currencyCode": "USD",
+            "amount": 530.4
+          },
+          "fees": {
+            "currencyCode": "USD",
+            "fee": [
+              {
+                "currencyCode": "USD",
+                "amount": 300,
+                "feeCode": "FS"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 994,
+                "feeCode": "YQ"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 50,
+                "feeCode": "PHF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 50,
+                "feeCode": "RCF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 150,
+                "feeCode": "PSF"
+              },
+              {
+                "currencyCode": "USD",
+                "amount": 564,
+                "feeCode": "UDF"
+              }
+            ]
+          },
+          "clientEntityCommercial": [
+            {
+              "clientID": "",
+              "parentClientID": "",
+              "clientCommercials": [
+                {
+                  "commercialCurrency": "INR",
+                  "commercialType": "Receivable",
+                  "commercialAmount": 29.9,
+                  "commercialName": "MarkUp",
+                  "companyFlag": true
+                },
+                {
+                  "commercialCurrency": "INR",
+                  "commercialType": "Receivable",
+                  "commercialAmount": 184.45,
+                  "commercialName": "ServiceCharge",
+                  "companyFlag": true
+                }
+              ],
+              "commercialEntityType": "ClientType",
+              "commercialEntityID": "BookEngClientTypeB2CIndiaEng"
+            }
+          ]
+        }
+      ]
+    },
+    "opsFlightSupplierPriceInfo": {
+      "supplierPrice": "8067",
+      "currencyCode": "INR",
+      "paxTypeFares": [
+        {
+          "totalFare": {
+            "currencyCode": "INR",
+            "amount": 2689
+          },
+          "paxType": "ADT",
+          "taxes": {
+            "currencyCode": "INR",
+            "amount": 80,
+            "tax": [
+              {
+                "amount": 40,
+                "taxCode": "CGST07",
+                "currencyCode": "INR"
+              },
+              {
+                "amount": 40,
+                "taxCode": "SGST07",
+                "currencyCode": "INR"
+              }
+            ]
+          },
+          "baseFare": {
+            "currencyCode": "INR",
+            "amount": 520
+          },
+          "fees": {
+            "currencyCode": "INR",
+            "fee": [
+              {
+                "currencyCode": "INR",
+                "amount": 300,
+                "feeCode": "FS"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 975,
+                "feeCode": "YQ"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 50,
+                "feeCode": "PHF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 50,
+                "feeCode": "RCF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 150,
+                "feeCode": "PSF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 564,
+                "feeCode": "UDF"
+              }
+            ],
+            "amount": 2089
+          },
+          "supplierCommercials": [
+            {
+              "commercialCurrency": "INR",
+              "commercialType": "Receivable",
+              "commercialAmount": 74.75,
+              "commercialName": "Standard"
+            }
+          ]
+        },
+        {
+          "totalFare": {
+            "currencyCode": "INR",
+            "amount": 2689
+          },
+          "paxType": "CHD",
+          "taxes": {
+            "currencyCode": "INR",
+            "amount": 80,
+            "tax": [
+              {
+                "amount": 40,
+                "taxCode": "CGST07",
+                "currencyCode": "INR"
+              },
+              {
+                "amount": 40,
+                "taxCode": "SGST07",
+                "currencyCode": "INR"
+              }
+            ]
+          },
+          "baseFare": {
+            "currencyCode": "INR",
+            "amount": 520
+          },
+          "fees": {
+            "currencyCode": "INR",
+            "fee": [
+              {
+                "currencyCode": "INR",
+                "amount": 300,
+                "feeCode": "FS"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 975,
+                "feeCode": "YQ"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 50,
+                "feeCode": "PHF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 50,
+                "feeCode": "RCF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 150,
+                "feeCode": "PSF"
+              },
+              {
+                "currencyCode": "INR",
+                "amount": 564,
+                "feeCode": "UDF"
+              }
+            ],
+            "amount": 2089
+          },
+          "supplierCommercials": [
+            {
+              "commercialCurrency": "INR",
+              "commercialType": "Receivable",
+              "commercialAmount": 74.75,
+              "commercialName": "Standard"
+            }
+          ]
+        }
+      ]
+    },
+    "opsFlightSupplierCommercials": [
+      {
+        "commercialCurrency": "INR",
+        "commercialType": "Receivable",
+        "commercialAmount": "224.25",
+        "commercialName": "Standard"
+      }
+    ]
+  }
+}

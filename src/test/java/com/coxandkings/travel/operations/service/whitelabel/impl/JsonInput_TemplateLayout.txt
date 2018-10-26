@@ -1,0 +1,6 @@
+{
+	"templateLayoutId":"1",
+	"templateTypeId":"2",
+    	"customTextBoxInfo":"3",
+    	"whiteLabelId":"1"
+}

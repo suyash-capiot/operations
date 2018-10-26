@@ -1,0 +1,25 @@
+dtms:
+  url: http://172.23.213.25:8080/kie-server/services/rest/server/containers/instances/dtms-snapshot
+  username: kieserver
+  password: kieserver1!
+  request:
+    lookup: dtmssession
+    commands:
+      insert:
+        out-identifier: Calculation
+        return-object: false
+        entry-point: DEFAULT
+        template-object:
+          document-template-management:
+            headers:
+              user-id: U123
+              transaction-id: T123
+
+  template-content-json-path: "$.result.execution-results.results[0].value[0].['cnk.documenttemplatemanagement.DocumentTemplateManagement'].dtmOutput.templates[0].dynamicTemplateContent"
+
+mdm:
+  template: ${mdm.base_url}:10003/platform/v1/template
+  template-body-json-path: "$.templateContent.templateContent"
+
+document-library:
+  url: http://10.29.19.27:8084/documentLibrary/documents

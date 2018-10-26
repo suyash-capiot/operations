@@ -1,0 +1,4 @@
+#*** Configurations for Finance module APIs ***#
+finance:
+  base_url: http://10.25.6.54:8080/ams/api/v1/
+#*** Configurations for Finance module APIs ***#

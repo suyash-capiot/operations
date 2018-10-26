@@ -1,0 +1,42 @@
+brms:
+  username: kieserver
+  password: kieserver1!
+  base_url: http://10.24.2.185:8080/kie-server/services/rest/server/containers/instances #note: brms not creating any record in dev this is sit address
+
+#*** START configuration starts for tax engine ***#
+tax_engine:
+  base_url: http://10.24.2.185:8080/kie-server/services/rest/server/containers/instances/tax-calculation
+  clientType: ${mdm.client}clientType/
+  clientLocation: ${mdm.client}clientLoc/
+#*** END configuration starts for tax engine ***#
+
+#*** START configuration starts for supplier Commercial calculation ***#
+commercial-calculation:
+  base_url: http://10.24.2.185:8080/kie-server/services/rest/server/containers/instances/
+  clientType: ${mdm.client}clientType/
+  clientLocation: ${mdm.client}clientLoc/
+  acco: ${commercial-calculation.base_url}/acco-cce-supplier-transactional
+#*** END configuration starts for supplier Commercial calculation ***#
+
+#*** START configuration starts for Commercial statements calculation ***#
+commercial_statements_calculations:
+  supplier: http://10.24.2.185:8080/kie-server/services/rest/server/containers/instances/acco-cce-supplier-transactional
+#*** END configuration starts for Commercial statements calculation ***#
+
+
+#Start Offline Booking
+offline-booking:
+    acco:
+      supplier-commercial: ${brms.base_url}/acco-cce-supplier-transactional
+      client-commercial: ${brms.base_url}/acco-cce-client-transactional
+#End Offline Booking
+
+#start offers
+offers:
+  base_url: http://10.24.2.185:8080
+  username: kieserver
+  password: kieserver1!
+  voucherDetails: http://10.24.2.81:8090/RedemptionCodeGeneration/codeGeneration/getOfferCodesInfo
+  offers-withoutRedemption: ${offers.base_url}/kie-server/services/rest/server/containers/instances/acco-companyoffers-withoutredemption
+#end offers
+

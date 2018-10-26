@@ -1,0 +1,14 @@
+[
+  {
+    "cliendId": "B2BCLIENT105",
+    "totalRevenueForPeriod": "123000",
+    "totalGrossProfit": "75000",
+    "totalOutstandingWithAgeing": "34544"
+  },
+  {
+    "cliendId": "B2BCLIENT107",
+    "totalRevenueForPeriod": "124000",
+    "totalGrossProfit": "77000",
+    "totalOutstandingWithAgeing": "34556"
+  }
+]

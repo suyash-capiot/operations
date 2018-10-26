@@ -1,0 +1,7 @@
+{
+    "id": "1",
+    "paymentMode": "NetBanking",
+    "bankId": "2",
+    "keyFile": "7",
+    "midName": "5"
+}

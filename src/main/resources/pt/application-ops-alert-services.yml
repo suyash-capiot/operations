@@ -1,0 +1,174 @@
+###*** YML file to Specify Module Specific Alert Settings ***###
+
+#*** Email for Refund ***#
+refund:
+  email:
+    function: Refunds
+
+    refund_confirmation:
+      scenario: MNG REFUND - SEND CONFIRMATION TO CUSTOMER
+      subject: Refund is processed
+    refund_promo_code:
+      scenario: MNG REFUND - SEND PROMO CODE TO CUSTOMER
+      subject: Refund processed & your promo code
+  alert:
+    finance_alert_name: "Refund Finance User"
+    approve_alert: "Refund Approved"
+#*** End Email for Refund ***#
+
+#*** Alert for Full Cancellation ***#
+full_cancellation:
+  user_alert: "Full Cancellation"
+  supplier_confirm_cancellation_alert: "Full Cancellation Supplier Ok"
+  email:
+    function: Full Cancellation
+    client_confirmation:
+     scenario: "MNG FULL CANCL - SEND CONFIRMATION TO CLIENT"
+     subject: Booking cancellation successful
+    supplier_approval_reject:
+     scenario: "MNG FULL CANCL - SEND APPRV RJCT MAIL TO SPPLR"
+     subject: "Alert: Booking cancellation request With Link."
+    email_alert_supplier:
+      scenario: MNG FULL CANCL - EMAIL ALERT TO SUPPLIER
+      subject: "Alert: Booking cancellation request"
+
+
+#*** END Alert for Full Cancellation ***#
+
+#*** Alert for Product Sharing ***#
+product_sharing:
+  mdm:
+    user_alert: "Product Sharing Info"
+#*** END Alert for Product Sharing  ***#
+
+#*** BEGIN Email Ccnfiguration of Add Driver Details***#
+add_driver_details:
+  template_config:
+    function: Add Driver Details
+    scenario: MNG ADD DRIVER DETAILS - EMAIL TO CLIENT
+    subject: Driver details of your booking.
+  dynamic_variables:
+    first_name: First Name
+    trip : Trip A to B
+    booking_id: Booking ID
+#*** END of Email Ccnfiguration of Add Driver Details  ***#
+
+#*** Email Ccnfiguration of Supplement On Supplier Price***#
+supplement_on_supplier_price:
+  template_config:
+    function: "Supplement on Supplier Price"
+    scenario: "REQUEST TO ACCEPT INCREASED PRICE"
+    subject: "Changed Pricing Detail."
+  dynamic_variables:
+    booking_id: booking_id
+    original_price : original_price
+    increased_price: increased_price
+#*** END of Email Ccnfiguration of Supplement On Supplier Price* ***#
+
+#*** Alert Configuration for manage No Show***#
+manage_no_show:
+  alertNames:
+    no-show-alert: ManageNoShowAlert
+    no-show-cancel-alert: NoShowCancelAlert
+  alertConfig:
+    businessProcess: Operations
+    function: ManageNoShow
+#*** END Alert Ccnfiguration for manage No Show***#
+
+#*** BEGIN for New Supplier First Booking***#
+new-supplier-first-booking:
+  alert:
+    receive_alert: NewSupplierFirstBookingAlert
+    assign_alert: NewSupplierFirstBookingNotes
+  alertConfig:
+    businessProcess: Operations
+    function: NewSupplierFirstBooking
+    alertName: NewSupplierFirstBookingNotes
+#*** BEGIN for New Supplier First Booking***#
+
+#*** Alert for CommercialStatements ***#
+commercial_statements:
+  supplier_alert: SUPPLIER_COMMERCIAL_STATEMENT
+  client_alert: CLIENT_COMMERCIAL_STATEMENT
+  bill_passing_approval: COMMERCIAL_STATEMENT_APPROVAL
+  client_statement_created: CLIENT_COMMERCIAL_STATEMENT
+  supplier_statement_created: SUPPLIER_COMMERCIAL_STATEMENT
+#*** End of Alert for CommercialStatements ***#
+
+#*** Alert for TimeLimit ***#
+timelimit:
+  alertConfig:
+    businessProcess: Operations
+    function: TimeLimitBooking
+    alertName: CloseToExpiry
+    cancellationAlerName: CancelAlert
+    approvalAlertName: approvalAlert
+#*** End of Alert for TimeLimit***#
+
+#*** BEGIN Alert Ccnfiguration for SupplierBillPassing***#
+supplier-bill-passing:
+  alert:
+    approval: SUPPLIER_BILL_PASSING_APPROVAL
+    completed: SUPPLIER_BILL_PASSING
+#*** END Alert Ccnfiguration for supplier bill passing***#
+
+#*** BEGIN Alert Configuration for Manage Failure***#
+failures:
+  alert_ops:
+    name: MngFlrSndOpsScflBkng
+    alertType: System
+  alert_tech:
+    name: MNG FLR RPRT TO TECHNICAL
+    alertType: System
+  alert_ops_unsuccessful:
+    name: WEB SERVICE NOT SUCCESSFUL
+    alertType: System
+#***END Alert Configuration for Manage Failure***#
+
+#*** BEGIN Manage Document ***#
+manage_document:
+  handover_document:
+    function: Handover Document
+    hotel_voucher:
+      scenario: MNG HANDOVER EZ1 HOTEL VOUCHER
+  email:
+    function: Manage Documentation
+    scenario: MNG DOC - SEND HNDOVR DOCS TO CUST
+    subject: "Handover document"
+
+
+#**END Manage Document ***#
+
+
+#*** BEGIN Alert Ccnfiguration for Pre Payment To Supplier Module***#
+pre_payment_to_supplier:
+  alert:
+    notificationType: System
+    supplier:
+      alertName: Alert for Extranet Supplier
+    opsUser:
+      alertName: Alert for Ops User
+    approval:
+      alertName: Approval Alert
+    reject:
+      alertName: Rejection Alert
+#*** END Alert Ccnfiguration for Pre Payment To Supplier Module ***#
+
+#*** BEGIN Alert Ccnfiguration for ManageReconfirmation Module***#
+reconfirmation:
+  alertConfig:
+    businessProcess: Operations
+    function: ManageReconfirmation
+    alertName: ReconfirmationOnHold
+#*** END Alert Ccnfiguration for ManageReconfirmation Module ***#
+
+#*** BEGIN email configuration for Product Review Module***#
+review:
+  email:
+    function: Product Review
+    businessprocess: Operations
+    send_client:
+      scenario: MNG PRDT REVW - SEND TO CLIENT
+    send_client_approval:
+      scenario: MNG PRDT REVW - SEND TO CLIENT FOR APPROVAL
+#*** END email configuration for Product Review Module***#

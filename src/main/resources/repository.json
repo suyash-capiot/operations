@@ -1,0 +1,30 @@
+{
+  "name" : "CNKRepository",
+  "workspaces" : {
+    "predefined" : ["otherWorkspace"],
+    "default" : "default",
+    "allowCreation" : true
+  },
+  "security" : {
+    "anonymous" : {
+      "roles" : ["readonly","readwrite","admin"],
+      "useOnFailedLogin" : false
+    }
+  },
+  "storage": {
+
+    "persistence": {
+      "type": "file",
+      "path": "/home/server-admin/operations/doc-library/persistence"
+    },
+    "binaryStorage": {
+      "type": "file",
+      "directory": "/home/server-admin/operations/doc-library/persistence/binary-storage",
+      "trash": "/home/server-admin/operations/doc-library/persistence/trash"
+    }
+  }
+}
+
+
+
+

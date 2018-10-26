@@ -1,0 +1,27 @@
+{
+  "invoice":"BSINR 0000 0001-01",
+  "invoiceDate": "2018-01-01T00:00:00.000Z",
+  "invoiceAmount": 8100,
+  "currencyCode": "INR",
+  "clientPayment":
+  {
+    "paymentTowards": "Full payment",
+    "paymentDate": "2018-01-01T00:00:00.000-07:00",
+    "paymentCollection": 8100,
+    "refundable": true,
+    "receiptNo": 723097,
+    "paymentStatus": "Payment_Realised",
+    "currencyCode":"INR",
+    "modeOfTransfer": "Wire Transfer"
+  },
+  "noteNo": 587568,
+  "refundDetails":
+  {
+    "refundClaimId": "45545",
+    "refundAmount": 1655,
+    "refundStatus":"String",
+    "currencyCode":"INR"
+  },
+  "totalCollection":8100,
+  "totalOutstandingAmount":0
+}

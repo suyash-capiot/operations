@@ -1,0 +1,613 @@
+{
+  "responseBody": {
+    "pricedItinerary": [
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  },
+                  "extendedRPH": "G8~ 336~ ~~DEL~07/25/2018 14:15~BOM~07/25/2018 16:25~~",
+                  "availableCount": 0,
+                  "departureTerminal": "",
+                  "journeyDuration": 130,
+                  "destinationLocation": "BOM",
+                  "rph": "GS",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "DEL",
+                  "quoteID": "0~N~~G8~NO9RBINX~0009~~0~1~~X",
+                  "resBookDesigCode": "N",
+                  "arrivalDate": "2018-07-25T16:25:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-07-25T14:15:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "G8",
+                    "flightNumber": " 336"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "GOAIR",
+        "airItineraryPricingInfo": {
+          "itinTotalFare": {
+            "amount": 9710.4,
+            "baseFare": {
+              "amount": 6140.4,
+              "currencyCode": "INR"
+            },
+            "fees": {
+              "amount": 2524,
+              "fee": [
+                {
+                  "amount": 200,
+                  "feeCode": "PHF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 200,
+                  "feeCode": "RCS",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 1224,
+                  "feeCode": "YQ",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 40,
+                  "feeCode": "COMM",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 200,
+                  "feeCode": "COMMBF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 612,
+                  "feeCode": "PSF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 48,
+                  "feeCode": "UDF",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "taxes": {
+              "amount": 400,
+              "tax": [
+                {
+                  "amount": 200,
+                  "taxCode": "CT07",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 200,
+                  "taxCode": "ST07",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "receivables": {
+              "amount": 646,
+              "receivable": [
+                {
+                  "amount": 646,
+                  "code": "ServiceCharge",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "currencyCode": "INR"
+          },
+          "paxTypeFares": [
+            {
+              "paxType": "ADT",
+              "baseFare": {
+                "amount": 1535.1,
+                "currencyCode": "INR"
+              },
+              "fees": {
+                "total": 631,
+                "fee": [
+                  {
+                    "amount": 50,
+                    "feeCode": "PHF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "RCS",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 306,
+                    "feeCode": "YQ",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "feeCode": "COMM",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "COMMBF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 153,
+                    "feeCode": "PSF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 12,
+                    "feeCode": "UDF",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "totalFare": {
+                "amount": 2427.6,
+                "currencyCode": "INR"
+              },
+              "taxes": {
+                "total": 100,
+                "tax": [
+                  {
+                    "amount": 38,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 2,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 38,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 2,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "receivables": {
+                "amount": 161.5,
+                "receivable": [
+                  {
+                    "amount": 161.5,
+                    "code": "ServiceCharge",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              }
+            },
+            {
+              "paxType": "CHD",
+              "baseFare": {
+                "amount": 1535.1,
+                "currencyCode": "INR"
+              },
+              "fees": {
+                "total": 631,
+                "fee": [
+                  {
+                    "amount": 50,
+                    "feeCode": "PHF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "RCS",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 306,
+                    "feeCode": "YQ",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "feeCode": "COMM",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "COMMBF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 153,
+                    "feeCode": "PSF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 12,
+                    "feeCode": "UDF",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "totalFare": {
+                "amount": 2427.6,
+                "currencyCode": "INR"
+              },
+              "taxes": {
+                "total": 100,
+                "tax": [
+                  {
+                    "amount": 38,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 2,
+                    "taxCode": "CT07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 38,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 10,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 2,
+                    "taxCode": "ST07",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "receivables": {
+                "amount": 161.5,
+                "receivable": [
+                  {
+                    "amount": 161.5,
+                    "code": "ServiceCharge",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "isReturnJourneyCombined": false,
+        "airItinerary": {
+          "originDestinationOptions": [
+            {
+              "flightSegment": [
+                {
+                  "marketingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  },
+                  "extendedRPH": "6E~ 965~ ~~BOM~08/30/2018 07:50~DEL~08/30/2018 10:10~",
+                  "availableCount": 0,
+                  "departureTerminal": "",
+                  "journeyDuration": 140,
+                  "destinationLocation": "DEL",
+                  "rph": "R",
+                  "cabinType": "Economy",
+                  "connectionType": "",
+                  "originLocation": "BOM",
+                  "quoteID": "0~R~~RCIP~1070~~2~X",
+                  "resBookDesigCode": "R",
+                  "arrivalDate": "2018-08-30T10:10:00",
+                  "refundableIndicator": true,
+                  "departureDate": "2018-08-30T07:50:00",
+                  "arrivalTerminal": "",
+                  "operatingAirline": {
+                    "airlineCode": "6E",
+                    "flightNumber": " 965"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "supplierRef": "INDIGO",
+        "airItineraryPricingInfo": {
+          "itinTotalFare": {
+            "amount": 11147.72,
+            "baseFare": {
+              "amount": 1505.52,
+              "currencyCode": "INR"
+            },
+            "fees": {
+              "amount": 8638,
+              "fee": [
+                {
+                  "amount": 1200,
+                  "feeCode": "FS",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 200,
+                  "feeCode": "PHF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 200,
+                  "feeCode": "RCF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 3978,
+                  "feeCode": "YQ",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 552,
+                  "feeCode": "DF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 600,
+                  "feeCode": "PSF",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 1908,
+                  "feeCode": "UDFA",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "taxes": {
+              "amount": 288,
+              "tax": [
+                {
+                  "amount": 144,
+                  "taxCode": "CGST27",
+                  "currencyCode": "INR"
+                },
+                {
+                  "amount": 144,
+                  "taxCode": "SGST27",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "receivables": {
+              "amount": 716.2,
+              "receivable": [
+                {
+                  "amount": 716.2,
+                  "code": "ServiceCharge",
+                  "currencyCode": "INR"
+                }
+              ],
+              "currencyCode": "INR"
+            },
+            "currencyCode": "INR"
+          },
+          "paxTypeFares": [
+            {
+              "paxType": "ADT",
+              "baseFare": {
+                "amount": 376.38,
+                "currencyCode": "INR"
+              },
+              "fees": {
+                "total": 2159.5,
+                "fee": [
+                  {
+                    "amount": 300,
+                    "feeCode": "FS",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "PHF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "RCF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 994.5,
+                    "feeCode": "YQ",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 138,
+                    "feeCode": "DF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 150,
+                    "feeCode": "PSF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 477,
+                    "feeCode": "UDFA",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "totalFare": {
+                "amount": 2786.93,
+                "currencyCode": "INR"
+              },
+              "taxes": {
+                "total": 72,
+                "tax": [
+                  {
+                    "amount": 36,
+                    "taxCode": "CGST27",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 36,
+                    "taxCode": "SGST27",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "receivables": {
+                "amount": 179.05,
+                "receivable": [
+                  {
+                    "amount": 179.05,
+                    "code": "ServiceCharge",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              }
+            },
+            {
+              "paxType": "CHD",
+              "baseFare": {
+                "amount": 376.38,
+                "currencyCode": "INR"
+              },
+              "fees": {
+                "total": 2159.5,
+                "fee": [
+                  {
+                    "amount": 300,
+                    "feeCode": "FS",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "PHF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 50,
+                    "feeCode": "RCF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 994.5,
+                    "feeCode": "YQ",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 138,
+                    "feeCode": "DF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 150,
+                    "feeCode": "PSF",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 477,
+                    "feeCode": "UDFA",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "totalFare": {
+                "amount": 2786.93,
+                "currencyCode": "INR"
+              },
+              "taxes": {
+                "total": 72,
+                "tax": [
+                  {
+                    "amount": 36,
+                    "taxCode": "CGST27",
+                    "currencyCode": "INR"
+                  },
+                  {
+                    "amount": 36,
+                    "taxCode": "SGST27",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              },
+              "receivables": {
+                "amount": 179.05,
+                "receivable": [
+                  {
+                    "amount": 179.05,
+                    "code": "ServiceCharge",
+                    "currencyCode": "INR"
+                  }
+                ],
+                "currencyCode": "INR"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "tripIndicator": "DOMESTIC"
+  },
+  "responseHeader": {
+    "clientContext": {
+      "pointOfSale": "http://www.ezeego1.in",
+      "clientID": "",
+      "clientLanguage": "English",
+      "clientType": "B2C",
+      "clientCallbackAddress": "",
+      "clientMarket": "India",
+      "clientCurrency": "INR",
+      "clientNationality": "",
+      "clientIATANumber": "1234"
+    },
+    "sessionID": "BE-Return-20180116-230487348245533",
+    "userID": "WEM",
+    "transactionID": "6554659"
+  }
+}

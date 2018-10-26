@@ -1,0 +1,8 @@
+{
+	"clientMarketId": "1",
+	"pointOfSale" : "India" ,
+	"domainUrl" : "www.eezego1.com",
+	"whiteLabelEnumHandlerId": "3" ,
+	"languageIds" : ["RS", "DR"],
+	"currencyIds" : ["RS", "DR"]
+}

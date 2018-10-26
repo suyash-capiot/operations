@@ -1,0 +1,209 @@
+#*** Configuration root file for Operations module ***#
+#*** Imports of all dependencies are defined here ***#
+
+server:
+  port: 8080
+
+
+operation:
+  backend-url: http://172.23.209.29:8080/operations-api-1.0-SNAPSHOT/
+#*** Define import of other YML files here ***#
+spring.profiles.include:
+  - 'batch-jobs-config'
+  - 'core-booking-engine'
+  - 'core-booking-engine-dbservices'
+  - 'core-brms'
+  - 'core-db-config'
+  - 'core-document-services'
+  - 'core-dtms-services'
+  - 'core-communication-services'
+  - 'core-finance-services'
+  - 'core-mdm'
+  - 'core-security-config'
+  - 'message-producers-consumers'
+  - 'ops-alert-services'
+  - 'ops-booking-engine-apis'
+  - 'ops-booking-engine-dbservices-apis'
+  - 'ops-brms'
+  - 'ops-finance-services-apis'
+  - 'ops-mdm-apis'
+  - 'ops-communication-services'
+  - 'ops-document-services'
+  - 'ops-quartz-scheduler'
+#*** END Import of other YML files here ***#
+
+#*** BEGIN Log4j2 Configuration ***
+
+logging:
+ config: classpath:log4j2.xml
+
+#*** END of Log4j Configuration ***#
+
+
+
+
+
+## BEGIN -- configurations for refund
+refund:
+  refundConfiguration: ${operation.backend-url}refundConfiguration/v1/getRefundConfiguration
+## END -- configurations for refund
+
+
+
+#operations_booking:
+  #base_url: http://operations-api-operations-dev.10.24.4.14.nip.io/jbpm-integration-0.0.1-SNAPSHOT/mockBE
+  #all_accommodations: ${operations_booking.base_url}/getAllAccommodations
+
+##BEGIN -- Product review configuration
+review:
+  scheduler-url: ${booking_engine.base_url}/BookingService/searchProductsToReview?productEndDate=
+  operations_base_url: ${operation.backend-url}
+  template:
+    base_url: ${review.operations_base_url}/mdmTemplates/v1/template/
+###END -- Product review configuration
+
+## BEGIN -- configurations for new-supplier-first-booking
+new-supplier-first-booking:
+  response:
+    accept_url: ${operation.backend-url}/newSupplierFirstBooking/accepted/
+    reject_url: ${operation.backend-url}/newSupplierFirstBooking/rejected/
+## END -- configurations for new-supplier-first-booking
+
+kafkalocal:
+  producer:
+    bootstrap: 172.23.213.29:9092
+    topic: emailTopic
+    enabled: true
+
+ops:
+  email:
+    sendEmailWithBody: ${operation.backend-url}/emails/sendEmailWithBody
+    sendEmailWithTemplate: ${operation.backend-url}/emails/sendEmailUsingTemplate
+    sendEmailUsingTemplateAndDocuments: ${operation.backend-url}/emails/sendEmailUsingTemplateAndDocuments
+    sendEmailUsingBodyAndDocuments: ${operation.backend-url}/emails/sendEmailUsingBodyAndDocuments
+    fromEmailAddress: "smtp.aws@coxandkings.com"
+
+## BEGIN -- configurations for part payment monitor
+partPaymentMonitor:
+  batch-job-scheduling-interval: 0 0 22 1/1 * ? *
+  # run every minute: batch-job-scheduling-interval: 0 0/1 * 1/1 * ? *
+  finance:
+    get-partpayment-bookings: ${finance.base_url}getPaymentStatusAccordingToBooking
+## END -- configurations for part payment monitor
+
+full_cancellation:
+  externet_supplier_back_link: ${operation.backend-url/fullCancellations/v1/updateOrderStatusNotExternetSupplier
+  inventory_supplier_back_link: ${operation.backend-url/fullCancellations/v1/updateInventoryStatus
+
+## BEGIN -- configurations for cheaper price updates
+updatesToProductMaster:
+  batch-job-scheduling-interval: 0 0 7 1/1 * ? *
+  get-cheaper-price-updates-base: ${booking_engine.base_url}/BookingService/searchCheaperPriceBookings
+  flight-url: ${updatesToProductMaster.get-cheaper-price-updates-base}/Flight
+  hotel-url: ${updatesToProductMaster.get-cheaper-price-updates-base}/Hotel
+  get-flight-products-by-criteria: ${booking_engine.base_url}/BookingService/searchFlightsForProductUpdates
+## END -- configurations for cheaper price updates
+
+amend-supplier-commercial:
+  base_url: ${operation.backend-url/beCommercial
+  revised-acco: ${amend-supplier-commercial.base_url}/accoRevisedCommercial
+  revised-air: ${amend-supplier-commercial.base_url}/airRevisedCommercial
+  update-commercial: ${amend-supplier-commercial.base_url}/updateBooking
+
+amendmentAndPartialCancellation:
+  finance:
+    invoiceCheck: ${finance.base_url}/receiptInvoice
+    invoiceUpdate: ${amendmentAndPartialCancellation.finance.base_url}/amendinvoices
+  bookingEngine:
+    base_url: ${booking_engine.base_url}
+    air_compChrgAmend: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AirService/update/companyAmendCharges
+    acco_compChrgAmend: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AccoService/update/companyAmendCharges
+    air_compChrgCancel: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AirService/update/companyCancelCharges
+    acco_compChrgCancel: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AccoService/update/companyCancelCharges
+    air_suppChrgAmend: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AirService/update/suppAmendCharges
+    acco_suppChrgAmend: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AccoService/update/suppAmendCharges
+    air_suppChrgCancel: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AirService/update/suppCancelCharges
+    acco_suppChrgCancel: ${amendmentAndPartialCancellation.bookingEngine.base_url}/AccoService/update/suppCancelCharges
+  debitNote:
+    creditDebitMemo: ${finance.base_url}/creditDebitMemo
+  email:
+      base-url: ${operation.backend-url}
+      sendEmail: ${amendmentAndPartialCancellation.email.base-url}/emails/sendEmailUsingTemplate
+      approved: ${amendmentAndPartialCancellation.email.base-url}/amendments/supplierResponse/approved?id=
+      rejected: ${amendmentAndPartialCancellation.email.base-url}/amendments/supplierResponse/rejected?id=
+
+reinstateBooking:
+  emails:
+    search: ${amendmentAndPartialCancellation.email.base-url}/emails/search
+
+mailRoomAndDispatch:
+  path-expression:
+    supplier:
+      supplierNames: "$.data[*].supplier.name"
+
+
+#***BEGIN Configuration for Manage Failure - Payment And Booking module ***#
+failures:
+  pnr: ${booking_engine.base_url}/AirService/update/PNR
+  supplierReferenceNumber: ${booking_engine.base_url}/AccoService/update/suppReferences
+  update-order-attribute: ${booking_engine.base_url}/BookingService/update/orderAttribute
+  paymentDetails: ${booking_engine.base_url}/BookingService/update/paymentInfo
+  air-service:
+    retrieve: ${booking-engine-core-services.base_url}/AirService/v1/retrievepnr
+  acco-service:
+    retrieve: ${booking-engine-core-services.base_url}/AccoService/v1/retrieve
+#***END Configuration for Manage Failure - Payment And Booking module ***#
+
+
+change_supplier_name:
+  suppliers: ${mdm.client_supplier_product_mapping.search}
+
+#*** BEGIN Manage Arrival List Module APIs ***#
+manage-arrival-list:
+    general-list-name: "/tmp/arrivalList/generalArrival.pdf"
+    flight-list-name: "/tmp/arrivalList/flightArrivalList.pdf"
+    acco-list-name: "/tmp/arrivalList/accoArrivalList.pdf"
+#*** END Manage Arrival List Module ***#
+
+merge-bookings:
+  file: "mergeList.pdf"
+  document:
+      upload: ${operation.backend-url}/documentLibrary/create
+  acco:
+      get-merge-list: ${booking_engine.base_url}/BookingService/getMergeBookings
+
+#*** supplier bill passing beginning ***#
+supplier-invoice-xpath:
+  basePath: /Package/Body/Page/Element[@Name=
+apollo:
+  createSupplier: http://10.21.20.42:3070/CreateSupplier
+#*** supplier bill passing ending ***#
+
+## BEGIN -- configurations for qc_management
+qc_management:
+  jsonExpression:
+    supplier-air-response: $.result.execution-results.results[*].value.[*].businessRuleIntake[*]
+    client-air-response: $.result.execution-results.results[*].value.[*].businessRuleIntake[*]
+## END -- configurations for qc_management
+
+file-profitability:
+  client:
+    B2B: "?select=clientProfile.clientDetails.clientName"
+    B2C: "?select=clientDetails.clientName"
+    getClientB2B : ${mdm.base_url}:10050/client/v1/clientB2B/
+    getClientB2C : ${mdm.base_url}:10050/client/v1/corpTraveller/
+
+third-party-vouchers:
+  voucher-file: "/home/server-admin/operations/voucherFile.xlsx"
+  report: "/home/server-admin/operations/report.pdf"
+  barcode-file: "/home/server-admin/operations/"
+  barcode-file-archived: "/home/server-admin/operations/"
+manage-document:
+  directory: "/home/server-admin/operations/doc-library/"
+
+##Change Supplier Name
+change-supplier:
+  acco:
+    supplier-url: "http://10.24.4.69:8080/Operations/OperationsService/v1/accoService/ops/GetSupplierDetails"
+    booking-url: "http://10.24.4.69:8080/CNK_ChannelManager/CMService/v1/accoService/updateBookingDetails"
+    defined-rates: "http://10.24.4.69:8080/Operations/OperationsService/v1/accoService/ops"

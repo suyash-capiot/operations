@@ -1,0 +1,20 @@
+qc_management:
+  brms:
+    air-supplier-commercial-url: ${brms.base_url}/air-cce-supplier-transactional
+    acco-supplierCommercial-url: ${brms.base_url}/acco-cce-supplier-transactional
+    air-client-commercial-url: ${brms.base_url}/air-cce-client-transactional
+    acco-client-commercial-url: ${brms.base_url}/acco-cce-client-transactional
+    air-supplier-commercial-nontransactional-url: ${brms.base_url}/air-cce-supplier-settlement
+    acco-supplier-commercial-nontransactional-url: ${brms.base_url}/acco-cce-supplier-settlement
+    
+commercials_statements:
+  brms:
+    url:
+      acco-supplier-transactional: ${brms.base_url}/acco-cce-supplier-transactional
+      air-supplier-transactional: ${brms.base_url}/air-cce-supplier-transactional
+      acco-supplier-settlement: ${brms.base_url}/acco-cce-supplier-settlement
+      air-supplier-settlement: ${brms.base_url}/air-cce-supplier-settlement
+    reqShell:
+      acco-supplier-transactional: '{"lookup": "suppliertransactionalsession","commands": [{"insert": {"out-identifier": "BusinessRuleIntake","object": {"cnk.acco_commercialscalculationengine.suppliertransactionalrules.Root": {"transactional":true}}}},{"fire-all-rules": {}}]}'
+      acco-supplier-nontransactional: '{"lookup": "suppliertransactionalsession","commands": [{"insert": {"out-identifier": "BusinessRuleIntake","object": {"cnk.acco_commercialscalculationengine.suppliertransactionalrules.Root": {"transactional":false}}}},{"fire-all-rules": {}}]}'
+      air-supplier-nontransactional: '{"lookup": "suppliertransactionalsession","commands": [{"insert": {"out-identifier": "BusinessRuleIntake","object": {"cnk.air_commercialscalculationengine.suppliertransactionalrules.Root": {"transactional":false}}}},{"fire-all-rules": {}}]}'

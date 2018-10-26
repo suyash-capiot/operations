@@ -1,0 +1,4 @@
+{
+	"loginParameter":"test",
+	"whiteLabelId":"1"
+}

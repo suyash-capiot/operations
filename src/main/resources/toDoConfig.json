@@ -1,0 +1,346 @@
+[
+  {
+    "taskSubType": "BOOKING",
+    "taskNames": [
+      {
+        "taskName": "ALL",
+        "url": "booking/details/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "ON_REQUEST",
+    "taskNames": [
+      {
+        "taskName": "ALL",
+        "url": "booking/details/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "REFUND",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/refunds/"
+      },
+      {
+        "taskName": "OTHER",
+        "url": "OTHER_REFUND_REDIRECT"
+      }
+    ]
+  },
+  {
+    "taskSubType": "PAYMENT_ADVICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/payment-advice/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SELLING_PRICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/discount-on-selling-price/"
+      }
+    ]
+  },
+   {
+    "taskSubType": "DISCOUNT_ON_SUPPLIER_PRICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/discount-supplier-price/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLEMENT_ON_SUPPLIER_PRICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/supplement-supplier-price/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_SUPPLIER_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/supplier/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_CLIENT_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/client/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_COMPANY_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/company/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_SUPPLIER_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/supplier/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_CLIENT_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/client/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "AMEND_COMPANY_COMMERCIAL",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amend-commercials/company/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "PRODUCT_REVIEW",
+    "taskNames": [
+      {
+        "taskName": "VERIFICATION",
+        "url": "product-review/view/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "PAYMENT_ADVICE_SUPPLIER_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/payment-advice-supplier-bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "MANAGE_FAILURE",
+    "taskNames": [
+      {
+        "taskName": "CANCEL_AND_REFUND",
+        "url": "booking/details/"
+      },
+      {
+        "taskName": "SEARCH_AND_BOOK",
+        "url": "booking/details/"
+      },
+      {
+        "taskName": "REFUND",
+        "url": "booking/details/"
+      },
+      {
+        "taskName": "UPDATE_PNR",
+        "url": "booking/details/"
+      },
+      {
+        "taskName": "INVESTIGATE_AND_ACTION",
+        "url": "booking/details"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "COMPANY_CHARGES_AMENDMENT",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amendCharges/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "COMPANY_CHARGES_CANCELLATION",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amendCharges/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_CHARGES_AMENDMENT",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amendCharges/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_CHARGES_CANCELLATION",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/amendCharges/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "COLLECT_DOCUMENTS_FOR_BOOKING",
+    "taskNames": [
+      {
+        "taskName": "CUSTOMER_DOCUMENTATION",
+        "url": "booking/details/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "HANDOVER_DOCUMENT_GENERATION",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/handoverDocumentGeneration/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "FOREX_INDENT",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/forex-Indent/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "FOREX_REQUEST",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/forex-Request/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "CLIENT_COMMERCIAL_STATEMENT_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatements/bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_COMMERCIAL_STATEMENT_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatements/bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "CLIENT_COMMERCIAL_STATEMENT_PAYMENT_ADVICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatement/client-payment-advice/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_COMMERCIAL_STATEMENT_PAYMENT_ADVICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatement/supplier-payment-advice/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "CLIENT_COMMERCIAL_STATEMENT_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatements/bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_COMMERCIAL_STATEMENT_BILL_PASSING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatements/bill-passing/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "CLIENT_COMMERCIAL_STATEMENT_PAYMENT_ADVICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatement/client-payment-advice/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "SUPPLIER_COMMERCIAL_STATEMENT_PAYMENT_ADVICE",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/commercialStatement/supplier-payment-advice/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "CONVERT_TIME_LIMIT_BOOKING_TO_PAID",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/time-limit-booking/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "ALTERNATE_OPTIONS",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/alternate-options/"
+      }
+    ]
+  },
+  {
+    "taskSubType": "PAYMENT_PENDING",
+    "taskNames": [
+      {
+        "taskName": "APPROVE",
+        "url": "approver/payment-pending/"
+      }
+    ]
+  }
+]

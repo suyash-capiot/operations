@@ -1,0 +1,247 @@
+#*** Config file for MDM APIs used by different modules ***#
+
+### Configuration for User Management ###
+mdm:
+  common:
+    get:
+      users: ${mdm.user-management}/user
+      filter-based-users: ${mdm.user-management}/user?filter=
+      filter-based-roles: ${mdm.base_url}:10010/usermgmt/v1/role?filter=
+      roles: ${mdm.base_url}:10010/usermgmt/v1/role
+
+    supplier:
+      supplier-by-id: ${mdm.supplier-config}suppliers/
+      credentials: ${mdm.supplier-config}suppliersCredential
+      supplierCompanyMarket : ${mdm.supplier-config}SupComMarMapping
+
+    client:
+      b2b_client: ${mdm.client}clientB2B/
+      b2c_client: ${mdm.client}corpTraveller
+      client_kpi: ${mdm.client-config}common-manage-client
+      client-group: ${mdm.client}clientGroup/
+
+### END Configuration for User Management ###
+
+#*** BEGIN Configuration for Amend Client/Supplier Commercials ***#
+
+  commercials-kafka: ${mdm.base_url}:10100/kafkaLog/v1/kafkaLog
+  supplier-commercial-head: ${mdm.supplier-commercials}get-supplier-commercial-commercial-head
+
+#*** END Configuration for Amend Client/Supplier ***#
+
+### BEGIN Configuration for Change Supplier ###
+  client_supplier_product_mapping:
+    search: ${mdm.base_url}:10051/client-config/v1/enable-disable-product-supplier?filter=
+### END Configuration for Change Supplier ###
+
+#*** BEGIN Configuration for Manage RECONFIRMATION ***#
+reconfirmation:
+  mdm:
+    reconfirmation-config-search: "${mdm.operation-master}reconfirmation-configuration?filter="
+    reconfirmation-config-single-record: "${mdm.operation-master}reconfirmation-configuration/{0}"
+    # TimeLimit configuration
+    time-limit-config-search: " ${mdm.config-master}time-limit?filter="
+    time-limit-config-single-record: "${mdm.config-master}time-limit/"
+    #Supplier and Client
+    supplier: "${mdm.supplier-config}suppliers/{0}"
+    clientB2B: "${mdm.client}clientB2B/{0}"
+    clientB2C: "${mdm.client}corpTraveller/{0}"
+
+  path-expression:
+    supplier:
+      reconfirmationCutOff : "$.data.[0].supplierReconfirmation.supplierReconfirmation[0].reconfirmationCutOff"
+      durationType : "$.data.[0].supplierReconfirmation.supplierReconfirmation[0].duration.dureationType"
+      duration : "$.data.[0].supplierReconfirmation.supplierReconfirmation[0].duration.duration"
+      reconfirmationToBeSentTo : "$.data.[0].supplierReconfirmation.supplierDetails[0].reconfirmationToBeSentTo"
+      configurationFor : "$.data.[0].productDetails.configurationFor"
+    client :
+      reconfirmationCutOff: "$.data.[0].clientOrCustomerConfig.clientOrCustomerReconfirmation[0].reconfirmationCutOff"
+      durationType: "$.data.[0].clientOrCustomerConfig.clientOrCustomerReconfirmation[0].duration.dureationType"
+      duration: "$.data.[0].clientOrCustomerConfig.clientOrCustomerReconfirmation[0].duration.duration"
+      reconfirmationSentTo: "$.data.[0].clientOrCustomerConfig.clientDetails[0].reconfirmationSentTo"
+      configurationFor: "$.data.[0].productDetails.configurationFor"
+#*** END Configuration for Manage Reconfirmations ***#
+
+#*** BEGIN Configuration for Manage Product Sharing ***#
+product_sharing:
+  mdm:
+    alert_url: ${communication.alert.api}/alerts/v1/sendInlineMessageAlert
+#*** END Configuration for Manage Product Sharing ***#
+
+#*** BEGIN Configuration for Manage offline booking ***#
+offline-booking:
+  product-accommodation: ${mdm.product-details}Accommodation
+#*** END Configuration for Manage offline booking ***#
+
+#*** BEGIN Pre Payment To Supplier Module MDM specific APIs ***#
+pre-payment-to-supplier:
+  mdm:
+    supplier-settlement: ${mdm.supplier-config}suppliersSettlements?filter=
+    supplier-id: ${mdm.supplier-config}suppliersSettlements?select=supplierId
+    type-of-settlement: ${mdm.supplier-config}suppliersSettlements?filter=
+    extranet-access: ${mdm.supplier-config}suppliers?filter=
+#*** END Pre Payment To Supplier Module MDM specific APIs ***#
+
+#*** BEGIN Configuration for TimeLimitBooking ***#
+url_to_get_timeLimitExtension_field: ${mdm.config-master}time-limit
+timelimit:
+  mdm:
+    timelimit-config-master: ${mdm.config-master}time-limit?filter=
+
+  jsonExpression:
+    mdm:
+      products: $.data[0].tlmGrid[0].products[*]
+      extensionFlag: $.data[0].tlmGrid[0].tlExtnAllowed
+      expiryType: $.data[0].tlmGrid[0].tlmExpiry
+      bookingDateOptions: $.data[0].tlmGrid[0].bookingDateOptions
+      travelDateOptions: $.data[0].tlmGrid[0].travelDateOptions
+      bufferCount: $.data[0].tlmGrid[0].buffer
+#*** END Configuration for TimeLimitBooking ***#
+
+#*** BEGIN for New Supplier First Booking***#
+new-supplier-first-booking:
+  mdm:
+    supplierDetails: ${mdm.supplier-config}suppliers/
+
+  path:
+      supplierEmailId: $.contactInfo.contactDetails.email
+#*** END for New Supplier First Booking***#
+
+#*** BEGIN Configuration for Manage Arrival List ***#
+manage-arrival-list:
+  mdm:
+    #base-url: http://10.24.2.5:10003
+    supplier-id: ${mdm.supplier-config}/suppliers?filter=
+#*** END Configuration for Manage Arrival List ***#
+
+### BEGIN Configuration for CommercialStatements ###
+commercial-statements:
+  client-settlement-url: ${mdm.base_url}:10051/client-config/v1/client-settlement
+  getClientSettlementTerm: ${commercial-statements.client-settlement-url}/
+  client_id: ${commercial-statements.client-settlement-url}?select="_id"
+  supplier-settlement-url: ${mdm.base_url}:10001/supplier-config/v1/suppliersSettlements
+  getSupplierSettlementTerm: ${commercial-statements.supplier-settlement-url}?filter=
+  supplier_id: ${commercial-statements.supplier-settlement-url}?select="_id"
+  getSupplierCommercials: ${mdm.base_url}:10029/supplier-commercial/v1/supplier-commercial?filter=
+### END Configuration for CommercialStatements ###
+
+### BEGIN Configuration for MergeBookings ###
+merge-bookings:
+  acco:
+    getRates: ${mdm.base_url}:10075/supplier-rate/v1/accommodation/main
+    getAdvancedDef: ${mdm.base_url}:10075/supplier-rate/v1/accommodation/advance-definition/%s
+### END Configuration for MergeBookings ###
+
+#*** BEGIN Service Order and Supplier Liability ***#
+service_order:
+  mdm:
+    path_expression: "$.data[0].supplierCommercialData.standardCommercial.isTransactional"
+    path_expression2:  "$['data'][0]['supplierCommercialData']['standardCommercial'][?(@.isTransactional)]"
+#*** END Service Order and Supplier Liability ***#
+
+#*** BEGIN Configuration for Manage Documentation ***#
+manage-documentation:
+  get-document-handling-master: ${mdm.config-master}document-handling?filter=
+  path_expression:
+    document_handling_grid: "$.data[0:].documentHandlingGrid[0:]"
+    document_setting: "$.data[0:].documentHandlingGrid[0:].documentSetting[0:]"
+#*** END Configuration for Manage Documentation ***#
+
+
+#*** BEGIN Manage Product Updates ***#
+manage-product-updates:
+  mdm:
+    product-details-air: "${mdm.product-air}"
+    product-details-acco: "${mdm.product-accommodation}"
+    alertConfig:
+      businessProcess: "Operations"
+      function: "Manage Product Updates"
+      alertName : "Product Update Master"
+#*** END Manage Product Updates ***#
+
+
+
+#*** Get Sales office details ***#
+get_salesoffice_details: ${mdm.organization}/salesoffice?filter=
+get_market_details: ${mdm.organization}/market
+#*** END Get Sales office details ***#
+
+#*** BEGIN for PartPayment monitor***#
+part-payment-monitor:
+  mdm:
+    part-payment-config-master: ${mdm.config-master}part-payment?filter=
+#*** END for PartPayment monitor***#
+
+#***BEGIN for Offline Supplier Amendments ***  #
+supplier-amendments:
+  mdm:
+    get-suppliers: ${mdm.supplier-config}/suppliersCredential?filter=
+    supplier-credentials: $.data[*].credentialDetails.credentials
+    get-supplier-markets: $.data[*].supplierMarkets
+    get-supplier-ancillary: ${mdm.base_url}:10002/ancillary/v1/
+    get-supplier-ancillary-filter: $.[0].data.value
+#***END for offline Supplier Amendments ***#
+
+
+#*** BEGIN Configuration for Manage Forex Operations ***#
+
+manage-forex:
+  mdm:
+    extranet-access: ${mdm.supplier-config}suppliers?filter=
+#*** END Configuration for Manage Forex Operations ***#
+
+#*** BEGIN Configuration for To-do ***#
+
+todo:
+  mdm:
+    alert: ${mdm.base_url}:10003/platform/v1/alert
+    company: ${mdm.organization}/company?filter=
+    company_market: ${mdm.organization}/market?filter=
+    login: ${mdm.user-management}/login
+    logout: ${mdm.user-management}/logout
+    get:
+      user: ${mdm.user-management}/user?filter=
+    B2B: ${mdm.client}/clientB2B
+
+#*** END Configuration for To-do Operations ***#
+
+#*** BEGIN Configuration for Ops Booking Adapter ***#
+adapter:
+  mdm:
+    getAirlineName: ${mdm.base_url}:10002/ancillary/v2/getAncillaryForUI/airlineDetails?filter=
+    airlineNamePathExpression: "$.data[0].data.name"
+#*** END Configuration for Ops Booking Adapter ***#
+
+#*** BEGIN Configuration for Workflow Operations ***#
+workflow:
+  mdm:
+    doc-update: ${mdm.workflow}fetch/
+    add: ${mdm.workflow}
+    get: ${mdm.workflow}
+    wf-update: ${mdm.workflow}update-wf
+#*** END Configuration for Workflow Operations ***#
+offlineBooking:
+  roe: ${mdm.get-supplier-roe}?filter=
+  clientB2Bs: ${mdm.client}clientB2B?filter=
+  clientCommercialBudgetedMargins: ${mdm.clientCommercials}budgeted-margin?filter=
+  clientType: ${mdm.client}ClientType?filter=
+  clientConfigEnableDisableProductSuppliers: ${mdm.client-config}enable-disable-product-supplier?filter=
+  associateClientToGroup: ${mdm.client-dashboard}associate-client-to-group?filter=
+  suppliersCredentials: ${mdm.supplier-config}suppliersCredential?filter=
+  #suppRateAcco: ${mdm.supplier-rates}accommodation/main/
+  suppRateAcco: ${mdm.supplier-rates}accommodation/main?filter=
+  advanceDefAcco: ${mdm.supplier-rates}accommodation/advance-definition/
+  surcahrgeAndSuppDef: ${mdm.supplier-rates}accommodation/surcharge-and-supplement/
+  cityInfo: ${mdm.ancillary}city?filter=
+  suppRateAccoTaxes: ${mdm.supplier-rates}accommodation/define-taxes/
+  amendmentPolicy: ${mdm.supplier-config}polMaster?filter=
+  corporateTravellers: ${mdm.client}corpTraveller?filter=
+  countryInfo: ${mdm.ancillary}country?filter=
+  offers: ${mdm.offer-master}acco/main?filter=
+  paymentDetails: ${mdm.supplier-rates}accommodation/payment-details/
+
+#*** BEGIN Configuration for Document Library ***#
+document-library:
+  upload-asset: ${mdm.base_url}:10013/asset/v1/upload?type=doc
+  get-asset: ${mdm.base_url}:10013/asset/v1/
+#*** END Configuration for Document Library ***#  
